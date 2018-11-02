@@ -73,4 +73,15 @@ const FAV_PET = "Cats";
 FAV_PET = "Dogs"; // returns error
 ```
 As you can see, trying to reassign a variable declared with `const` will throw an error. You should always name variables you don't want to reassign using the `const` keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. `A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.`
+## Some developers prefer to assign all their variables using const by default, unless they know they will need to reassign the value. Only in that case, they use let.
+
+However, it is important to understand that objects (including arrays and functions) assigned to a variable using **const** are still mutable. `Using the const declaration only prevents reassignment of the variable identifier.`
+```
+"use strict";
+const s = [5, 6, 7];
+s = [1, 2, 3]; // throws error, trying to assign a const
+s[2] = 45; // works just as it would with an array declared with var or let
+console.log(s); // returns [5, 6, 45]
+```
+As you can see, you can mutate the object [5, 6, 7] itself and the variable s will still point to the altered array [5, 6, 45]. Like all arrays, the array elements in s are mutable, `but because const was used, you cannot use the variable identifier s to point to a different array using the assignment operator.`
 
