@@ -34,9 +34,9 @@ myFun("one", "two", "three", "four", "five", "six");
 // b, two
 // manyMoreArgs, [three, four, five, six]
 ```
-| between rest parameters and the arguments objectSection
+### between rest parameters and the arguments objectSection
 There are three main differences between rest parameters and the arguments object:
 
-rest parameters are only the ones that haven't been given a separate name (i.e. formally defined in function expression), while the arguments object contains all arguments passed to the function;
-the arguments object is not a real array, while rest parameters are Array instances, meaning methods like sort, map, forEach or pop can be applied on it directly;
-the arguments object has additional functionality specific to itself (like the callee property).
+1. rest parameters are only the ones that haven't been given a separate name (i.e. formally defined in function expression), while the arguments object contains all arguments passed to the function;
+2. the arguments object is not a real array, while rest parameters are Array instances, meaning methods like **sort, map, forEach or pop** can be applied on it directly;
+3. the arguments object has additional functionality specific to itself (like the callee property).
