@@ -18,3 +18,25 @@ console.log(sum(1, 2, 3));
 console.log(sum(1, 2, 3, 4));
 // expected output: 10
 ```
+# DescriptionSection
+A function's last parameter can be prefixed with `...` which will cause all remaining (user supplied) arguments to be placed within a "standard" javascript array. Only the last parameter can be a "rest parameter".
+```
+function myFun(a, b, ...manyMoreArgs) {
+  console.log("a", a); 
+  console.log("b", b);
+  console.log("manyMoreArgs", manyMoreArgs); 
+}
+
+myFun("one", "two", "three", "four", "five", "six");
+
+// Console Output:
+// a, one
+// b, two
+// manyMoreArgs, [three, four, five, six]
+```
+| between rest parameters and the arguments objectSection
+There are three main differences between rest parameters and the arguments object:
+
+rest parameters are only the ones that haven't been given a separate name (i.e. formally defined in function expression), while the arguments object contains all arguments passed to the function;
+the arguments object is not a real array, while rest parameters are Array instances, meaning methods like sort, map, forEach or pop can be applied on it directly;
+the arguments object has additional functionality specific to itself (like the callee property).
