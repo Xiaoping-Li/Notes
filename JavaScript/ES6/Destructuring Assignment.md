@@ -24,6 +24,8 @@ const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54
 ```
 You may read it as `"get the field x and copy the value into a,"` and so on.
 
+### Use Destructuring Assignment to Assign Variables from Nested Objects
+
 We can similarly destructure nested objects into variables.
 
 Consider the following code:
