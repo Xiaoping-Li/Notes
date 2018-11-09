@@ -1,6 +1,6 @@
 _from freecodecamp_
 
-### Use Destructuring Assignment to Assign Variables from Objects
+## Use Destructuring Assignment to Assign Variables from Objects
 
 We saw earlier how spread operator can effectively spread, or unpack, the contents of the array.
 
@@ -24,7 +24,7 @@ const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54
 ```
 You may read it as `"get the field x and copy the value into a,"` and so on.
 
-### Use Destructuring Assignment to Assign Variables from Nested Objects
+## Use Destructuring Assignment to Assign Variables from Nested Objects
 
 We can similarly destructure nested objects into variables.
 
@@ -38,3 +38,5 @@ const { start : { x: startX, y: startY }} = a;
 console.log(startX, startY); // 5, 6
 ```
 In the example above, the variable `start` is assigned the value of `a.start`, which is also an object.
+
+## Use Destructuring Assignment to Assign Variables from Arrays
