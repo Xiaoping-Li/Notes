@@ -24,6 +24,7 @@ const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54
 ```
 You may read it as `"get the field x and copy the value into a,"` and so on.
 
+
 ## Use Destructuring Assignment to Assign Variables from Nested Objects
 
 We can similarly destructure nested objects into variables.
@@ -39,4 +40,16 @@ console.log(startX, startY); // 5, 6
 ```
 In the example above, the variable `start` is assigned the value of `a.start`, which is also an object.
 
+
 ## Use Destructuring Assignment to Assign Variables from Arrays
+
+ES6 makes destructuring arrays as easy as destructuring objects.
+
+One key difference between the `spread operator` and `array destructuring` is that the `spread operator` unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables.
+
+`Destructuring` an array lets us do exactly that:
+```
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b); // 1, 2
+```
+
