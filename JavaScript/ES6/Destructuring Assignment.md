@@ -21,3 +21,16 @@ If instead you want to store the values of `voxel.x` into `a`, `voxel.y` into `b
 const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54
 ```
 You may read it as `"get the field x and copy the value into a,"` and so on.
+
+We can similarly destructure nested objects into variables.
+
+Consider the following code:
+```
+const a = {
+  start: { x: 5, y: 6},
+  end: { x: 6, y: -9 }
+};
+const { start : { x: startX, y: startY }} = a;
+console.log(startX, startY); // 5, 6
+```
+In the example above, the variable `start` is assigned the value of `a.start`, which is also an object.
