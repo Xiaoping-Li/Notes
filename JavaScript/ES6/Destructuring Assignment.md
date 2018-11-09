@@ -1,6 +1,6 @@
 _from freecodecamp_
 
-###Use Destructuring Assignment to Assign Variables from Objects
+### Use Destructuring Assignment to Assign Variables from Objects
 
 We saw earlier how spread operator can effectively spread, or unpack, the contents of the array.
 
