@@ -18,3 +18,8 @@ const arr = [6, 89, 3, 45];
 const maximus = Math.max(...arr); // returns 89
 ```
 `...arr` returns an unpacked array. In other words, it spreads the array.
+
+However, the `spread operator` only works in-place, like in an argument to a function or in an array literal. The following code will not work:
+```
+const spreaded = ...arr; // will throw a syntax error
+```
