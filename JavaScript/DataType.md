@@ -35,7 +35,8 @@ A boolean represents a logical entity and can have one of two literal values: `t
 Symbols are new to JavaScript in ECMAScript Edition 6. A Symbol is a unique and immutable primitive value and may be used as the key of an Object property.
 ## Null Data Type
 The null data type is an internal type that has only one value: `null`. This is a primitive value that represents the absence of any object value. A variable that contains null contains no valid number, string, boolean, array, or object. You can erase the contents of a variable (without deleting the variable) by assigning it the null value.
-############################################################################################################################################################################################################################################################
+
+# More...
 ## Undefined Data Type
 The undefined value is returned when you use an object property that does not exist, or a variable that has been declared, but has never had a value assigned to it.
 ## Dynamic Typing
