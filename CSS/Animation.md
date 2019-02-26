@@ -54,3 +54,12 @@ HTML
   }
 }
 ```
+### 3. Using animation-fill-mode CSS property sets how a CSS animation applies styles to its target before and after its execution.
+```
+#animExample:hover {
+  animation-name: expand;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+```
+### 4. 
