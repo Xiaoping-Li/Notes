@@ -6,7 +6,7 @@
   * animation-duration: sets the **length of time** for the animation. 
   * animation-timing-function, 
   * animation-delay, 
-  * animation-iteration-count, 
+  * animation-iteration-count: allows you to control how many `times` you would like to `loop through` the animation. 
   * animation-direction, 
   * animation-fill-mode: specifies the style applied to an element when the animation has finished. (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)
        * none
@@ -81,3 +81,19 @@ As shown in the example below, we can push the item downwards then upwards by se
   }
 }
 ```
+### 5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
