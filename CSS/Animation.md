@@ -4,7 +4,11 @@
 **Animation properties**: control how the animation should behave. There are eight animation properties in total.
   * animation-name: sets the **name** of the animation, which is later used by **@keyframes** to tell CSS which rules go with which animations. 
   * animation-duration: sets the **length of time** for the animation. 
-  * animation-timing-function, 
+  * animation-timing-function: controls how quickly an animated element changes over the duration of the animation. (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) 
+       * ease: the default value, which starts slow, speeds up in the middle, and then slows down again in the end. 
+       * ease-out: which is quick in the beginning then slows down, 
+       * ease-in: which is slow in the beginning, then speeds up at the end, 
+       * linear: which applies a constant animation speed throughout.
   * animation-delay, 
   * animation-iteration-count: allows you to control how many `times` you would like to `loop through` the animation.
        * infinite: The animation will repeat forever.
