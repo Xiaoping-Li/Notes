@@ -19,6 +19,9 @@ The `MIN_VALUE` property is the smallest positive value of the Number type close
    * `Infinity`: This is any number divided by 0, or an attempt to multiply Number.MAX_VALUE by an integer > 1.
    * `-Infinity`: This is any number divided by -0, or an attempt to multiply Number.MAX_VALUE by an integer < -1.
    * `NaN`: This stands for "Not-a-Number" and denotes an unrepresentable value (i.e.,(-1)^(1/2) ).
+* The isSafeInteger Method: The `Number.isSafeInteger()` method determines whether the provided value is a number that is a safe integer.
+   * Maximum Safe Integer: The Number.MAX_SAFE_INTEGER constant has a value of , or .
+   * Minimum Safe Integer: The Number.MIN_SAFE_INTEGER constant has a value of , or .
 ##
 ##
 ##
