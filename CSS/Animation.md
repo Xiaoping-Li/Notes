@@ -6,7 +6,9 @@
   * animation-duration: sets the **length of time** for the animation. 
   * animation-timing-function, 
   * animation-delay, 
-  * animation-iteration-count: allows you to control how many `times` you would like to `loop through` the animation. 
+  * animation-iteration-count: allows you to control how many `times` you would like to `loop through` the animation.
+       * infinite: The animation will repeat forever.
+       * number: The number of times the animation will repeat; this is 1 by default. You may specify non-integer values to play part of an animation cycle: for example, 0.5 will play half of the animation cycle. Negative values are invalid.
   * animation-direction, 
   * animation-fill-mode: specifies the style applied to an element when the animation has finished. (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)
        * none
