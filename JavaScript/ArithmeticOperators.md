@@ -33,6 +33,8 @@ An _arithmetic operator_ takes numeric values (either literals or variables) as 
 ```
 * Increment (++): We use this operator in the _prefix_ and _postfix_ forms, forms `++operand` and `operand++`. The _prefix_ form, `++operand`, **increments the operand by 1 and then returns the value of the operand**. The _postfix_ form, `operand++`, **returns the value of the operand and then increments the operand's value by 1.**
 * Decrement (--): We use this operator in the _prefix_ and _postfix_ forms, forms `--operand` and `operand--`. The _prefix_ form, `--operand`, **decrements the operand by 1 and then returns the value of the operand**. The _postfix_ form, `operand--`, **returns the value of the operand and then decrements the operand's value by 1.**  
+
+
 **Note:** 
 * _prefix_ form update state now
 * _postfix_ form update in the second sequence not now
