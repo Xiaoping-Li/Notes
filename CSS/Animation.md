@@ -62,4 +62,22 @@ HTML
   animation-fill-mode: forwards;
 }
 ```
-### 4. 
+### 4. Creating movement
+When elements have a specified position, such as `fixed` or `relative`, the CSS _offset properties_ `right, left, top, and bottom` can be used in animation rules to create movement.
+As shown in the example below, we can push the item downwards then upwards by setting the top property of the 50% keyframe to 50px, but having it set to 0px for the first (0%) and the last (100%) keyframe.
+```
+@keyframes rainbow {
+  0% {
+    background-color: blue;
+    top: 0px;
+  }
+  50% {
+    background-color: green;
+    top: 50px;
+  }
+  100% {
+    background-color: yellow;
+    top: 0px;
+  }
+}
+```
