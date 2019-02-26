@@ -26,8 +26,8 @@ The `MIN_VALUE` property is the smallest positive value of the Number type close
 * A string value is a chain of zero or more Unicode characters (i.e., letters, digits, and punctuation marks) that we use to represent text. We include string literals in our scripts by enclosing them in single (') or double (") quotation marks. Double quotation marks can be contained in strings surrounded by single quotation marks (e.g., '"' evaluates to "), and single quotation marks can be contained in strings surrounded by double quotation marks (e.g., "'" evaluates to ').
 * Notice that JavaScript does not have a type to represent a single character. To represent a single character in JavaScript, you create a string that consists of only one character. A string that contains zero characters ("") is an empty (zero-length) string.
 * Unlike in languages like C, JavaScript strings are immutable. This means that once a string is created, it is not possible to modify it. However, it is still possible to create another string based on an operation on the original string. For example:
-      * A substring of the original by picking individual letters or using String.substr().
-      * A concatenation of two strings using the concatenation operator (+) or String.concat().
+   * A substring of the original by picking individual letters or using String.substr().
+   * A concatenation of two strings using the concatenation operator (+) or String.concat().
 
 ##
 ##
