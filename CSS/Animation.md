@@ -9,10 +9,10 @@
   * animation-iteration-count, 
   * animation-direction, 
   * animation-fill-mode: specifies the style applied to an element when the animation has finished. (https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode)
-   1. none
-   2. forwards
-   3. backwords
-   4. both
+   - none
+   - forwards
+   - backwords
+   - both
   * animation-play-state.
 ## @keyframes rule 
 **@keyframes rule**: controls what happens during that animation.
