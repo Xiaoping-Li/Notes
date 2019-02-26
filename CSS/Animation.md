@@ -19,7 +19,7 @@
 HTML
 <div id="animExample"></div>
 ```
-### Continually changing background-color
+### 1. Continually changing background-color
 ```
 #animExample {
   animation-name: rainbow;
@@ -35,6 +35,20 @@ HTML
   }
   100% {
     background-color: yellow;
+  }
+}
+```
+### 2. Chaning div size when hover
+```
+#animExample:hover {
+  animation-name: expand;
+  animation-duration: 500ms;
+}
+
+@keyframes expand {
+  100% {
+    width: 350px;
+    height: 100px;
   }
 }
 ```
