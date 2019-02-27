@@ -1,4 +1,17 @@
-_from freeCodeCamp_
+_from freeCodeCamp & HackerRank_
+# Variable Declaration Keywords
+## var
+We use the _var_ keyword to declare variables. The **scope** of a variable declared using this keyword is `within the context wherever it was declared`. For variables declared outside any function, this means they are globally available throughout the program. For variables declared within a function, this means they are only available within the function itself.
+
+## let
+We use the _let_ keyword to declare variables that are `limited in scope to the block, statement, or expression in which they are used`. This is unlike the _var_ keyword, which defines a variable globally or locally to an entire function regardless of block scope.
+
+
+It's important to note that you cannot redeclare a variable declared using the let keyword within the same scope as the original variable. An attempt to do this raises an Error, as demonstrated by the code below.
+
+## const
+We use the _const_ keyword to create a _read-only_ reference to a value, meaning the value referenced by this variable cannot be reassigned. Because the value referenced by a constant variable cannot be reassigned, JavaScript **requires** that constant variables always be initialized.
+
 # Declaration
 One of the biggest problems with declaring variables with the **var** keyword is that you can overwrite variable declarations without an error.
 ```
