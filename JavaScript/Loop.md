@@ -20,6 +20,7 @@ for (initialization; condition; finalExpression) {
 * _condition_: This is the _termination condition_, which is an expression that's evaluated before each pass through the loop. If this expression evaluates to _true_, then _statement_ is executed. If the expression evaluates to _false_, execution jumps to the first line of code after the end of the loop. If this statement is omitted, then _condition_ always evaluates to true.
 * _finalExpression_: An expression to be evaluated at the end of each loop iteration. This occurs before the next evaluation of _condition_.
 * _statement_: The statement (or statements) that is executed each time _condition_ evaluates to _true_.  
+
 It's important to note that:
 
 * The _initialization_, _condition_, and _finalExpression_ in the head of the _for_ loop are optional, but are generally always used.
