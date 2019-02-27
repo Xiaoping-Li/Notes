@@ -37,3 +37,41 @@ while (condition) {
 ```
 * _condition_: This is the _termination condition_, which is an expression that's evaluated before each pass through the loop. If this expression evaluates to _true_, then _statement_ is executed; if it evaluates to _false_, execution jumps to the first line of code after the end of the loop.
 * _statement_: The statement (or statements) that is executed each time _condition_ evaluates to _true_.
+
+## _do-while_
+The _do-while_ statement creates a loop that executes its internal statement(s) until the specified _condition_ evaluates to _false_. The condition is evaluated after executing the internal statement(s), so the contents of the loop always execute _at least_ once.
+
+### Basic Syntax
+```
+do {
+    statement(s);
+} while (condition);
+```
+* _condition_: This is the _termination condition_, and it's evaluated _after_ each pass through the loop (meaning the loop will always run at least once). Once the statement(s) inside the loop is executed, _condition_ is evaluated. If this expression evaluates to _true_, then _statement_ is executed again; if it evaluates to _false_, execution jumps to the first line of code after the end of the loop.
+* _statement_: The statement (or statements) that is executed each time _condition_ evaluates to _true_.
+
+## _for-in_
+This loop iterates (in an arbitrary order) over the _name_ of each enumerable property in an object, allowing statements to be executed for each distinct property.
+
+### Basic Syntax
+```
+for (var variable in object) {
+    // insert code that uses variable here
+}
+```
+* _variable_: A variable that refers to a different _property name_ during each iteration of the loop. You can declare this with `var` or `let`.
+* _object_: The object whose enumerable properties are being iterated through.
+
+## _for-of_
+This loop iterates over iterable objects such as an _Array, Map, Set, String, TypedArray, arguments object_, etc. It essentially iterates over the _value_ of each distinct property in the structure, such as each letter in a word or each element in an array.
+
+### Basic Syntax
+```
+for (let variable of iterable) {
+    statement(s);
+}
+```
+* _variable_: A variable that refers to a different _property value_ during each iteration of the loop. You can declare this with `var` or `let`.
+* _object_: The object whose enumerable properties are being iterated through.
+
+
