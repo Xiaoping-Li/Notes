@@ -32,3 +32,6 @@ The inequality operator is a binary operator that returns _true_ if the operands
 ### Logical OR (||)
 ### Logical NOT (!)
 ### Short-Circuit Evaluation
+As logical expressions are evaluated from `left to right`, they are tested for possible **short-circuit evaluation** using the following rules:
+* `false && expression` is short-circuit evaluated to false.
+* `true || expression` is short-circuit evaluated to true.
