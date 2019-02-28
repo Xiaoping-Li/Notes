@@ -99,4 +99,5 @@ If the `border-style` property has one value:
 
 * **border-style: dotted;**
   * all four borders are dotted
+  
 It also works with `border-width` and `border-color`.
