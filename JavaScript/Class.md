@@ -142,9 +142,174 @@ _Class expressions_ are another way to define a class, and they can be either _n
         }
     };
     ```
+    
+### The Constructor Method
+* The _constructor method_ is a special method we use to create and initialize objects of a class.
+* A class can only have _one_ special method with the name `constructor`, and attempting to write a class containing more than one constructor method will throw a _SyntaxError_.
+* To implement _inheritance_, we can use the `super` keyword in a constructor to call a parent class constructor.
 
+### Prototype Methods
+```
+class Polygon {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+    getArea() {
+        return this.height * this.width;
+    }
+}
 
+const square = new Polygon(10, 10);
+console.log(square.getArea());
+```
 
+### Static Methods
+_Static methods_ are methods relevant to all instances of a class — not just any one instance. These methods receive information from their arguments and not a class instance, which allows us to invoke a class' static methods without creating an instance of the class. In fact, we actually _can't_ call a static method on an instantiated class object (attempting to do so throws a _TypeError_).
 
+We define a class' static methods using the `static` keyword. We typically use these methods to create _utility_ functions for applications, as they can't be called on class objects.
+```
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    static distance(a, b) {
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+}
 
+const p1 = new Point(5, 5);
+const p2 = new Point(10, 10);
 
+// The correct way to call a static method
+console.log(Point.distance(p1, p2));
+
+// Attempt to call a static method on an instance of the class
+try {
+    console.log(p1.distance(p1, p2));
+}
+catch (exception) {
+    console.log(exception.name + ': ' + exception.message);
+}
+```
+Output:
+```
+7.0710678118654755
+TypeError: p1.distance is not a function
+```
+
+### Inheritance
+In essence, this construct allows us to create an object prototype or class that's an _extension_ of another object prototype or class. A class inheriting from some other class (referred to as a superclass or parent class) is called a subclass (or child class). The subclass inherits the superclass' methods and behaviors, but it can also declare new ones or even override existing ones.
+
+### Subclassing with the extends Keyword
+We use the `extends` keyword in class declarations or class expressions to create a child class (i.e., subclass).
+```
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    speak() {
+        console.log(this.name, 'speaks.');
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(this.name, 'barks.');
+    }
+}
+
+```
+
+We can also extend functional classes:
+```
+// functional class
+function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.speak = function() {
+    console.log(this.name, 'speaks.');
+}
+
+// class declarations
+class Dog extends Animal {
+    speak() {
+        console.log(this.name, 'barks.');
+    }
+}
+```
+
+### Superclass Calls Using the `super` Keyword
+We use the _super_ keyword to call functions on an object's parent.
+```
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    speak() {
+        console.log(this.name, 'speaks.');
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        super.speak();
+        console.log(this.name, 'barks.');
+    }
+}
+```
+
+### Extending an Object
+The ability to extend multiple classes from the same superclass (or model multiple object types after the same prototype) is powerful because it provides us with certain implied guarantees about the basic functionality of the subclasses; as extensions of the parent class, subclasses are guaranteed to (at minimum) have the superclass' fields, methods, and functions.
+
+In this example, we call the superclass constructor using `super()`, override a superclass function (`speak()`), add an additional property (`collarColor`), and add a new subclass method (`collar()`).
+```
+class Animal {
+    constructor(name) {
+        this.animalType = 'Animal'
+        this.name = name;
+    }
+    type() {
+        console.log(this.name, 'is type', this.animalType);
+    }
+    speak() {
+        console.log(this.name, 'speaks.');
+    }
+}
+
+class Dog extends Animal {
+    constructor(name, collarColor) {
+        super(name);
+        this.animalType = 'Dog';
+        this.collarColor = collarColor;
+    }
+    speak() {
+        console.log(this.name, 'barks.');
+    }
+    collar() {
+        console.log(this.name, 'has a', this.collarColor, 'collar.');
+    }
+}
+
+let spot = new Dog('Spot', 'red');
+spot.type();
+spot.speak();
+spot.collar();
+
+// Because the Animal constructor only expects one argument,
+// only the first value passed to it is used
+spot = new Animal('Spot', 'white');
+spot.type();
+spot.speak();
+try {
+    spot.collar();
+}
+catch (exception) {
+    console.log(exception.name + ': ' + exception.message
+    + ' (collar is a method of Dog, not Animal).');
+}
+```
