@@ -32,11 +32,57 @@ function sum(a, b) {
 The following line would be printed to our error console during execution: `The sum of 2 and 3 is -1.` This makes it obvious during debugging that there is a logical issue with how our function calculates the sum of a and b.
 
 ## Try, Catch, and Finally
+The _try_ statement has three forms:
 
+* _try-catch_
+* _try-finally_
+* _try-catch-finally_
 
+### _try_ block
+The _try_ block is the first step in error handling and is used for any block of code that is likely to raise an exception. It should contain one or more statements to be executed and is typically followed by at least one _catch clause_ and/or the optional _finally clause_. 
 
+### _catch_ block
+The _catch_ block immediately follows the _try_ block and is executed only if an exception is thrown when executing the code within the _try_ block. It contains statements specifying how to proceed and recover from the thrown exception; if no exception is thrown when executing the _try_ block, the _catch_ block is skipped. If any statement within the _try_ block (including a function call to code outside of the block) throws an exception, control immediately shifts to the catch clause.
 
+It's important to note that we always want to avoid throwing an exception. It's best if the contents of the _try_ block execute without issue but, if an exception is unavoidable, control passes to the _catch_ block which should contain instructions that report and/or recover from the exception.
 
+### _finally_ block
+The _finally_ block is optional. It executes after the _try_ and _catch_ blocks, but before any subsequent statements following these blocks. The _finally_ block always executes, regardless of whether or not an exception was thrown or caught.
 
+## Throw
+We use the _throw_ statement, denoted by the `throw` keyword, to throw an exception. There are two ways to do this, shown below.
+
+### 1. `throw value`
+We can throw an exception by following the keyword `throw` with some `value` that we wish to use for the exception being thrown. Click Run below to see this in code.
+
+### 2. `throw new Error(customError)`
+We can throw an exception by following the keyword `throw` with `new Error(customError)`, where _customError_ is the value we want for the _message_ property of the exception being thrown. 
+ 
+
+## Example
+https://www.hackerrank.com/challenges/js10-try-catch-and-finally/topics/javascript-strings
+
+**Task**
+
+Complete the reverseString function; it has one parameter, . You must perform the following actions:
+
+1. Try to reverse string _s_ using the split, reverse, and join methods.
+1. If an exception is thrown, catch it and print the contents of the exception's _message_ on a new line.
+1. Print _s_ on a new line. If no exception was thrown, then this should be the reversed string; if an exception was thrown, this should be the original string.
+
+```
+function reverseString(s) {
+    let rtn = s;
+    try {
+        rtn = s.split('').reverse().join('');
+    }
+    catch (e) {
+        console.log(e.message);
+    }
+    finally {
+        console.log(rtn);
+    }   
+}
+```
 
 
