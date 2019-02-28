@@ -27,7 +27,23 @@ background-position: left top;
 ```
 
 ## background-attachment
-The `background-attachment` CSS property sets whether a background image's position is fixed within the _viewport_, or scrolls with its containing block.
+The `background-attachment` CSS property sets whether a background image's position is fixed within the _viewport_, or scrolls with its containing block. (fixed, scroll, local)
+```
+background-attachment: fixed;
+background-attachment: local, scroll;
 ```
 
+## _background_: Shorthand property 
+To shorten the code, it is also possible to specify all the background properties in one single property. This is called a shorthand property.
+
+When using the shorthand property the order of the property values is:
+
+* background-color
+* background-image
+* background-repeat
+* background-attachment
+* background-position
+It does not matter if one of the property values is missing, as long as the other ones are in this order.
+```
+background: #ffffff url("img_tree.png") no-repeat right top;
 ```
