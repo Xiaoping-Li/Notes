@@ -57,6 +57,25 @@ We can throw an exception by following the keyword `throw` with some `value` tha
 
 ### 2. `throw new Error(customError)`
 We can throw an exception by following the keyword `throw` with `new Error(customError)`, where _customError_ is the value we want for the _message_ property of the exception being thrown. 
+
+```
+function isPositive(a) {
+    if (a > 0) {
+        return 'YES';
+    } else if (a === 0) {
+        throw new Error('Zero Error');
+    } else {
+        throw new Error('Negative Error');
+    }    
+}
+
+try {
+    isPositive(0); 
+}
+catch(e) {
+    console.log(e.message);
+}
+```
  
 
 ## Example
