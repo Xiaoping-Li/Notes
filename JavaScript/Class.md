@@ -122,6 +122,28 @@ let p = new Polygon(1, 2);
 ```
 **Note**: An important difference between function declarations and class declarations is that function declarations are hoisted (i.e., can be referenced before they're declared) but class declarations are not. This means we must first declare our class before attempting to access (or reference) it; if we fail to do so, our code throws a _ReferenceError_.
 
+### Class Expressions
+_Class expressions_ are another way to define a class, and they can be either _named_ or _unnamed_. The name given to a named class expression is _local_ to the class' body.
+* Unnamed Class Expression
+    ```
+    let Polygon = class {
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+    };
+    ```
+* Named Class Expression
+    ```
+    let Polygon = class Polygon {
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+    };
+    ```
+
+
 
 
 
