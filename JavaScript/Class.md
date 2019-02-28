@@ -78,6 +78,49 @@ This Mexican lime is green.
 This Mexican lime is yellow.
 ```
 
+### Singleton Class Using a Function
+A _singleton_ class is a design pattern that restricts a class to a **single instance**. When we assign the value of `new function(){...}` to a variable, the following happens:
+
+1. We define an anonymous constructor function.
+2. We invoke the anonymous constructor function with the `new` keyword.
+```
+let lime = new function() {
+    this.type = 'Mexican lime';
+    this.color = 'green';
+    this.getInformation = function() {
+        return 'This ' + this.type + ' is ' + this.color + '.';
+    };
+}
+
+console.log(lime.getInformation());
+
+lime.color = 'yellow';
+console.log(lime.getInformation());
+```
+Output:
+```
+This Mexican lime is green.
+This Mexican lime is yellow.
+```
+
+## Classes
+JavaScript classes, introduced in _ECMAScript 6_, are essentially syntactic sugar over JavaScript's existing prototype-based inheritance that don't actually introduce a new object-oriented inheritance model. `This syntax is a means of more simply and clearly creating objects and deal with inheritance.`
+
+We define classes in two ways:
+
+### Class Declarations
+One way to define a class is using a class declaration. To declare a class, we use the **class** keyword and follow it with the class' name. Ideally, we always write class names in _TitleCase_.
+```
+class Polygon {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+}
+
+let p = new Polygon(1, 2);
+```
+**Note**: An important difference between function declarations and class declarations is that function declarations are hoisted (i.e., can be referenced before they're declared) but class declarations are not. This means we must first declare our class before attempting to access (or reference) it; if we fail to do so, our code throws a _ReferenceError_.
 
 
 
