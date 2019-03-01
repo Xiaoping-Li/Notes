@@ -1,4 +1,9 @@
-_from freeCodeCamp_
+_from freeCodeCamp & hackerrank_
+
+# Arrow Functions
+
+These expressions lexically bind the `this` value while using less syntax than a typical function expression. Arrow functions are always _anonymous_.
+
 ES6 provides us with the syntactic sugar of anonymous functions: **arrow function syntax**
 ```
 const myFunc = () => {
