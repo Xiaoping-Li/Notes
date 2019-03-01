@@ -41,4 +41,13 @@ Conceptually, the bitwise logical operators work as follows:
 * Each bit in the first operand is paired with the corresponding bit in the second operand from least to most significant. In other words, the first LSB matches the first LSB, the second LSB matches the second LSB, and so on.
 * The operator is applied to each pair of bits so that the resulting number is constructed bitwise (i.e., bit-by-bit).
 
+### Bitwise AND (`&`)
+This operator performs the _AND_ operation on each pair of bits. Given two binary numbers, a and b, the result of an **AND** operation on the corresponding bits at each position i (i.e., ai & bi) is 1 if and only if both ai and bi are 1. The truth table for the bitwise **AND** operation is:
+ai|bi|ai & bi
+---|---|---
+0|0|0
+0|1|0
+1|0|0
+1|1|1
+
 
