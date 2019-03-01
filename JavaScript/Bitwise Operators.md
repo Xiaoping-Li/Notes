@@ -63,9 +63,19 @@ ai | bi | ai \| bi
 1 | 0 | 1
 1 | 1 | 1
 
-For example, 0101 & 0110 = 0111.
+For example, 0101 | 0110 = 0111.
 
+### Bitwise XOR (`^`)
+This operator performs the _XOR_ operation on each pair of bits. Given two binary numbers, a and b, the result of an **XOR** operation on the corresponding bits at each position i (i.e., ai ^ bi) is 1 if either ai or bi is 1 (i.e., the values of the two operands are different). The truth table for the bitwise **XOR** operation is:
 
+ai | bi | ai ^ bi
+--- | --- | :---:
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 0
+
+For example, 0101 ^ 0110 = 0011.
 
 
 
