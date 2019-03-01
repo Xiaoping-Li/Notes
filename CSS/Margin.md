@@ -47,7 +47,7 @@ You can set the margin property to `auto` to _horizontally center_ the element w
 The element will then take up the specified width, and the remaining space will be split equally between the _left_ and _right_ margins.
 
 ## The inherit Value
-This example lets the left margin of the <p class="ex1"> element be _inherited_ from the parent element (<div>):
+This example lets the left margin of the `<p class="ex1">` element be _inherited_ from the parent element (`<div>`).
  ```
  div {
   border: 1px solid red;
@@ -60,4 +60,19 @@ p.ex1 {
 ```
 
 ## Margin Collapse
+`Top` and `bottom` margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.
+
+This does not happen on left and right margins! Only top and bottom margins!
+```
+h1 {
+  margin: 0 0 50px 0;
+}
+
+h2 {
+  margin: 20px 0 0 0;
+}
+```
+In the example above, the <h1> element has a bottom margin of 50px and the <h2> element has a top margin set to 20px.
+
+Common sense would seem to suggest that the vertical margin between the <h1> and the <h2> would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px.
 
