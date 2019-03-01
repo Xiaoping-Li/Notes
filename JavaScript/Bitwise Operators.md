@@ -54,7 +54,7 @@ ai | bi | ai & bi
 For example, 101 & 110 = 100.
 
 ### Bitwise OR (`|`)
-This operator performs the _OR_ operation on each pair of bits. Given two binary numbers, a and b, the result of an **OR** operation on the corresponding bits at each position i (i.e., ai | bi) is 1 if ai and/or bi are 1. The truth table for the bitwise OR operation is:
+This operator performs the _OR_ operation on each pair of bits. Given two binary numbers, a and b, the result of an **OR** operation on the corresponding bits at each position i (i.e., ai | bi) is 1 if ai and/or bi are 1. The truth table for the bitwise **OR** operation is:
 
 ai | bi | ai \| bi
 --- | --- | :---:
@@ -76,6 +76,42 @@ ai | bi | ai ^ bi
 1 | 1 | 0
 
 For example, 0101 ^ 0110 = 0011.
+
+### Bitwise NOT (`~`)
+This operator performs the _NOT_ operation on each pair of bits in a number. Given a binary number, a, the **NOT** operation (i.e., ~a) inverts each bit in the number. The truth table for the bitwise **NOT** operation is:
+
+a | ~a 
+--- | --- 
+0 | 1 
+1 | 0 
+
+For example, ~101 = 010.
+
+### Example
+```
+// Bitwise AND
+     9 (base 10) = 00000000000000000000000000001001 (base 2)
+    14 (base 10) = 00000000000000000000000000001110 (base 2)
+                   --------------------------------
+14 & 9 (base 10) = 00000000000000000000000000001000 (base 2) = 8 (base 10)
+
+// Bitwise OR
+     9 (base 10) = 00000000000000000000000000001001 (base 2)
+    14 (base 10) = 00000000000000000000000000001110 (base 2)
+                   --------------------------------
+14 | 9 (base 10) = 00000000000000000000000000001111 (base 2) = 15 (base 10)
+
+// Bitwise XOR
+     9 (base 10) = 00000000000000000000000000001001 (base 2)
+    14 (base 10) = 00000000000000000000000000001110 (base 2)
+                   --------------------------------
+14 ^ 9 (base 10) = 00000000000000000000000000000111 (base 2) = 7 (base 10)
+
+// Bitwise NOT
+ 9 (base 10) = 00000000000000000000000000001001 (base 2)
+               --------------------------------
+~9 (base 10) = 11111111111111111111111111110110 (base 2) = -10 (base 10)
+```
 
 
 
