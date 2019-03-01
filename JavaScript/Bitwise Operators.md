@@ -26,8 +26,19 @@ for (let i = 0; i < d; i++) {
 In this explanation, we're representing our integers as 32-bit signed binary numbers. To represent an integer, _-n_, in binary, we perform the following steps:
 
 1. Find the 32-bit binary representation of n.
-2. Take the 1's complement. We do this by inverting all the binary number's bits (i.e., every 0 becomes a 1, and every 1 becomes a 0).
-3. Take the 2's complement by adding 1 to the 1's complement.
-The 's complement is the binary representation of .
+2. Take the **1**'s complement. We do this by inverting all the binary number's bits (i.e., every 0 becomes a 1, and every 1 becomes a 0).
+3. Take the **2**'s complement by adding 1 to the **1**'s complement.
+The **2**'s complement is the binary representation of _-n_.
+
+## Bitwise Operation Conventions
+Conceptually, the bitwise logical operators work as follows:
+
+* The operands are converted to 32-bit integers, meaning they're expressed as sequences of 32 zeroes and ones. Any number larger than 32 bits is reduced to 32 bits by cutting off and discarding its excess _most significant bits_. The example below shows a binary integer before and after it's converted to a 32-bit integer:
+  ```
+  Before: 11100110111110100000000000000110000000000001
+  After:              10100000000000000110000000000001
+  ```
+* Each bit in the first operand is paired with the corresponding bit in the second operand from least to most significant. In other words, the first LSB matches the first LSB, the second LSB matches the second LSB, and so on.
+* The operator is applied to each pair of bits so that the resulting number is constructed bitwise (i.e., bit-by-bit).
 
 
