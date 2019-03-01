@@ -51,4 +51,21 @@ ai | bi | ai & bi
 1 | 0 | 0
 1 | 1 | 1
 
+For example, 101 & 110 = 100.
+
+### Bitwise OR (`|`)
+This operator performs the _OR_ operation on each pair of bits. Given two binary numbers, a and b, the result of an **OR** operation on the corresponding bits at each position i (i.e., ai | bi) is 1 if ai and/or bi are 1. The truth table for the bitwise OR operation is:
+
+ai | bi | ai \| bi
+--- | --- | :---:
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 1
+
+For example, 0101 & 0110 = 0111.
+
+
+
+
 
