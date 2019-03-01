@@ -40,3 +40,24 @@ If the `margin` property has one value:
 
 * **margin: 25px;**
   * all four margins are 25px
+  
+## The auto Value
+You can set the margin property to `auto` to _horizontally center_ the element within its container.
+
+The element will then take up the specified width, and the remaining space will be split equally between the _left_ and _right_ margins.
+
+## The inherit Value
+This example lets the left margin of the <p class="ex1"> element be _inherited_ from the parent element (<div>):
+ ```
+ div {
+  border: 1px solid red;
+  margin-left: 100px;
+}
+
+p.ex1 {
+  margin-left: inherit;
+}
+```
+
+## Margin Collapse
+
