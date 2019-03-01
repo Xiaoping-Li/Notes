@@ -8,3 +8,30 @@ Any time we see an expression preceding a template literal, we call the expressi
 
 1. Template literals是一个ES2015特性，它使用反引号包含一个字符串字面量，并且支持嵌入表达式和换行。
 2. Tagged template literals: Template lieterals支持Tag。我们可以在Template lieterals前放置一个函数名，用来**控制它如何被转换成字符串**。
+
+## Tagged Template Literals
+Tagged template literals allow us to use a function to modify the output of a template literal. In this construct:
+
+1. The first argument contains an array of string literals.
+2. The subsequently processed arguments are the values of the substitution expressions.
+
+After processing all the arguments, the function returns the manipulated string.
+```
+var a = 5;
+var b = 10;
+
+function tag(strings, ...values) {
+    console.log("." + strings[0] + ".");
+    console.log("." + strings[1] + ".");
+    console.log("." + strings[2] + ".");
+    console.log("." + strings[3] + ".");
+    console.log(values[0]);
+    console.log(values[1]);
+    console.log(values[2]);
+}
+
+tag`Sum ${a + b}
+Product ${a * b}
+Division ${b / a}`;
+```
+
