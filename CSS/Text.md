@@ -1,1 +1,70 @@
 # Text
+## _color_
+The `color` property is used to set the color of the text. The default text color for a page is defined in the _body_ selector.  
+**Note**: For W3C compliant CSS: If you define the color property, you must also define the background-color.
+
+## _text-align_
+The `text-align` property is used to set the horizontal alignment of a text.
+* left: left alignment is default if text direction is left-to-right.
+* right: right alignment is default if text direction is right-to-left.  
+* center
+* justify: When the `text-align` property is set to "justify", each line is _stretched_ so that every line has equal width, and the left and right margins are straight (like in magazines and newspapers).
+
+## _text-decoration_
+The `text-decoration` property is used to set or remove decorations from text.
+
+The value `text-decoration: none;` is often used to remove underlines from _links_ (a tag).
+* none
+* overline
+* line-through
+* underline
+
+**Note**: It is not recommended to underline text that is not a link, as this often confuses the reader.
+
+## _text-transform_
+The `text-transform` property is used to specify uppercase and lowercase letters in a text.
+* uppercase
+* lowercase
+* capitalize: capitalize the first letter of each word
+
+## _text-indent_
+The `text-indent` property is used to specify the _indentation_ of the first line of a text.
+
+## _letter-spacing_
+The `letter-spacing` property is used to specify the _space_ between the characters in a text.
+
+The following example demonstrates how to increase or decrease the space between characters:
+```
+h1 {
+  letter-spacing: 3px;
+}
+
+h2 {
+  letter-spacing: -3px;
+}
+```
+
+## _line-height_
+The `line-height` property is used to specify the space between lines:
+```
+p.small {
+  line-height: 0.8;
+}
+
+p.big {
+  line-height: 1.8;
+}
+```
+
+## _direction_
+The `direction` property is used to change the text direction of an element.   
+Change the default left-to-right direction to right-to-left(rtl):
+```
+p {
+  direction: rtl;
+}
+```
+
+
+
+
