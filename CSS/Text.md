@@ -93,7 +93,7 @@ h1 {
 The `vertical-align` property sets the vertical alignment of an element.
 
 Value | Description
---- | ---
+:--- | :---
 baseline	| The element is aligned with the baseline of the parent. This is default	
 length	| Raises or lower an element by the specified length. Negative values are allowed. Read about length units	
 %	| Raises or lower an element in a percent of the "line-height" property. Negative values are allowed	
