@@ -65,6 +65,27 @@ p {
 }
 ```
 
+## _word-spacing_
+The `word-spacing` property is used to specify the space between the words in a text.
 
+The following example demonstrates how to increase or decrease the space between words: 
+```
+h1 {
+  word-spacing: 10px;
+}
 
+h2 {
+  word-spacing: -5px;
+}
+```
+
+## _text-shadow_
+The `text-shadow` property adds shadow to text.
+
+The following example specifies the position of the horizontal shadow (3px), the position of the vertical shadow (2px) and the color of the shadow (red):
+```
+h1 {
+  text-shadow: 3px 2px red;
+}
+```
 
