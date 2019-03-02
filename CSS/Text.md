@@ -89,3 +89,25 @@ h1 {
 }
 ```
 
+## _vertical-align_
+The `vertical-align` property sets the vertical alignment of an element.
+
+Value | Description
+--- | ---
+baseline	| The element is aligned with the baseline of the parent. This is default	
+length	| Raises or lower an element by the specified length. Negative values are allowed. Read about length units	
+%	| Raises or lower an element in a percent of the "line-height" property. Negative values are allowed	
+sub |	The element is aligned with the subscript baseline of the parent	
+super |	The element is aligned with the superscript baseline of the parent	
+top |	The element is aligned with the top of the tallest element on the line	
+text-top |	The element is aligned with the top of the parent element's font	
+middle |	The element is placed in the middle of the parent element	
+bottom |	The element is aligned with the lowest element on the line	
+text-bottom |	The element is aligned with the bottom of the parent element's font	
+initial |	Sets this property to its default value. Read about initial	
+inherit |	Inherits this property from its parent element. Read about inherit
+
+
+
+
+
