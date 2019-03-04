@@ -32,7 +32,7 @@ ul {
 }
 ```
 
-## List - Shorthand property
+## Shorthand property: _list-style_
 The `list-style` property is a shorthand property. It is used to set all the list properties in one declaration. When using the shorthand property, the order of the property values are:
 
 * `list-style-type` (if a list-style-image is specified, the value of this property will be displayed if the image for some reason cannot be displayed)
