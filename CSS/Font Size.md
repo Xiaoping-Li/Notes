@@ -1,7 +1,7 @@
 # Font Size
 Being able to manage the text size is important in web design. However, you should not use font size adjustments to make paragraphs look like headings, or headings look like paragraphs.
 
-Always use the proper HTML tags, like <h1> - <h6> for headings and <p> for paragraphs.
+Always use the proper HTML tags, like `<h1> - <h6>` for headings and `<p>` for paragraphs.
 
 The font-size value can be an absolute, or relative size.
 * Absolute size:
