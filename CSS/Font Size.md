@@ -38,3 +38,5 @@ It shows the same text size in all browsers, and allows all browsers to zoom or 
 The text size can be set with a **vw** unit, which means the "_viewport width_.
 
 That way the text size will follow the size of the browser window.
+
+**Note**: Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.
