@@ -24,7 +24,7 @@ To allow users to resize the text (in the browser menu), many developers use `em
 ## Use a Combination of Percent and Em
 The solution that works in all browsers, is to set a default font-size in _percent_ for the <body> element.
 ```
- body {
+body {
   font-size: 100%;
 }
 
@@ -32,5 +32,6 @@ h1 {
   font-size: 2.5em;
 }
 ```
+It shows the same text size in all browsers, and allows all browsers to zoom or resize the text!
 
 
