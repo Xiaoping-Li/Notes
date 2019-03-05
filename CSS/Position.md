@@ -15,10 +15,10 @@ HTML elements are positioned _static_ by default. Static positioned elements are
 An element with `position: relative;` is positioned relative to its _normal position_. Setting the `top, right, bottom, and left` properties of a relatively-positioned element will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.
 
 ## `position: fixed;`
-An element with `position: fixed;` is positioned relative to the **viewport**, which means it always stays in the same place even if the page is scrolled. The `top, right, bottom, and left` properties are used to position the element. A fixed element does not leave a gap in the page where it would normally have been located.
+An element with `position: fixed;` is positioned relative to the **viewport** (_browser window_), which means it always stays in the same place even if the page is scrolled. The `top, right, bottom, and left` properties are used to position the element. A fixed element does not leave a gap in the page where it would normally have been located.
 
 ## `position: absolute;`
-An element with `position: absolute;` is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). However, if an absolute positioned element has no positioned ancestors, it uses the **document body**, and moves along with page scrolling.
+An element with `position: absolute;` is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). However, if an absolute positioned element has no positioned ancestors, it uses the **document body** (_HTML page_), and moves along with page scrolling.
 
 **Note**: A "positioned" element is one whose position is anything except **static**.
 
@@ -28,7 +28,7 @@ An element with `position: sticky;` is positioned based on the user's **scroll p
 **Note**: Internet Explorer, Edge 15 and earlier versions do not support sticky positioning. Safari requires a -webkit- prefix (see example below). You must also specify at least one of `top, right, bottom or left` for sticky positioning to work.
 
 ## Overlapping Elements: _z-index_
-When elements are positioned, they can overlap other elements. The `z-index` property specifies the stack order of an element (which element should be placed in front of, or behind, the others). An element can have a `positive or negative` stack order.
+When elements are positioned, they can overlap other elements. The `z-index` property specifies the stack order of an element (which element should be placed in front of, or behind, the others). An element can have a `positive or negative` stack order. (For example, an image has a z-index of -1, it will be placed behind the text)
 
 An element with greater stack order is always in front of an element with a lower stack order.
 
