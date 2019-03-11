@@ -25,3 +25,14 @@ As mentioned, every element has a default display value. However, you can overri
 ## Hide an Element - `display:none` or `visibility:hidden`?
 * Hiding an element can be done by setting the `display: none;`. The element will be hidden, and the page will be displayed as if the element is not there.
 * `visibility:hidden;` also hides an element. However, the element will still take up the same space as before. The element will be hidden, but still affect the layout.
+
+## Values
+* inline
+* inline-block
+* block
+
+* Compared to `display: inline`, the major difference is that `display: inline-block` allows to set a _width_ and _height_ on the element. Also, with `display: inline-block`, the top and bottom margins/paddings are respected, but with `display: inline` they are not.
+* Compared to `display: block`, the major difference is that `display: inline-block` does not add a _line-break_ after the element, so the element can sit next to other elements.
+
+### Using `inline-block` to Create Navigation Links
+One common use for `display: inline-block` is to display _list items_ horizontally instead of vertically.
