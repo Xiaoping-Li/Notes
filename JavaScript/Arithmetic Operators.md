@@ -36,6 +36,6 @@ An _arithmetic operator_ takes numeric values (either literals or variables) as 
 
 
 **Note:** 
-* _prefix_ form update state now
-* _postfix_ form update in the second sequence not now
+* _prefix_ form update state now.
+* _postfix_ form update in the second sequence not now.
 
