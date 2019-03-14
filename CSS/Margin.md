@@ -46,6 +46,8 @@ You can set the margin property to `auto` to _horizontally center_ the element w
 
 The element will then take up the specified width, and the remaining space will be split equally between the _left_ and _right_ margins.
 
+**Note**: Center aligning has no effect if the width property is not set (or set to 100%).
+
 ## The inherit Value
 This example lets the left margin of the `<p class="ex1">` element be _inherited_ from the parent element (`<div>`).
  ```
