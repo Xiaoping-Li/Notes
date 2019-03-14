@@ -48,6 +48,17 @@ The element will then take up the specified width, and the remaining space will 
 
 **Note**: Center aligning has no effect if the width property is not set (or set to 100%).
 
+### Center an Image
+To center an image, set `left` and `right` _margin_ to **auto** and make it into a **block** element:
+```
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+```
+
 ## The inherit Value
 This example lets the left margin of the `<p class="ex1">` element be _inherited_ from the parent element (`<div>`).
  ```
@@ -74,7 +85,7 @@ h2 {
   margin: 20px 0 0 0;
 }
 ```
-In the example above, the <h1> element has a bottom margin of 50px and the <h2> element has a top margin set to 20px.
+In the example above, the `<h1>` element has a bottom margin of 50px and the `<h2>` element has a top margin set to 20px.
 
-Common sense would seem to suggest that the vertical margin between the <h1> and the <h2> would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px.
+Common sense would seem to suggest that the vertical margin between the `<h1>` and the `<h2>` would be a total of 70px (50px + 20px). But due to margin collapse, the actual margin ends up being 50px.
 
