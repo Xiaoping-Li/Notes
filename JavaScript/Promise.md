@@ -20,3 +20,21 @@ The _executor function_ has two function parameters, usually referred to as the 
 * **reject** is a function that takes a _reason or error_ as an argument. Under the hood, if invoked, `reject()` will change the promise’s status from **pending** to **rejected**, and the promise’s rejection reason will be set to the argument passed into `reject()`.
 
 In practice, promises settle based on the results of asynchronous operations. For example, a database request may fulfill with the data from a query or reject with an error thrown.
+
+## Consuming Promises
+The initial state of an asynchronous promise is `pending`, but we have a guarantee that it will settle. How do we tell the computer what should happen then? Promise objects come with an aptly named `.then()` method. It allows us to say, “I have a promise, when it settles, **then** here’s what I want to happen…”
+
+`.then()` is a higher-order function — it takes two callback functions as arguments. We refer to these callbacks as _handlers_. When the promise settles, the appropriate handler will be invoked with that settled value.
+
+* The first handler, sometimes called `onFulfilled`, is a _success handler_, and it should contain the logic for the promise resolving.
+* The second handler, sometimes called `onRejected`, is a _failure handler_, and it should contain the logic for the promise rejecting.
+
+We can invoke `.then()` with one, both, or neither handler! This allows for flexibility, but it can also make for tricky debugging. If the appropriate handler is not provided, instead of throwing an error, `.then()` will just return a promise with the same settled value as the promise it was called on. One important feature of `.then()` is that it always returns a promise. 
+
+
+
+
+
+
+
+
