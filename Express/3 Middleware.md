@@ -1,5 +1,5 @@
 # Middleware 
-1. [next()](##next())
+1. [next()](#next)
 2. [Request And Response Parameters](#Request And Response Parameters)
 3. [Third Example](#third-example)
 
@@ -19,7 +19,7 @@ _An Express application is essentially a series of middleware function calls._
 
 It is precisely this service that we leverage Express for. In addition to performing the routing that allows us to communicate appropriate data for each separate endpoint, we can perform application logic we need by implementing the necessary middleware.
 
-## next()
+## next() <a name="next"></a>
 The middleware stack is processed `in the order they appear` in the application file, such that _middleware defined later happens after middleware defined before_. It’s **important** to note that this is regardless of method — an `app.use()` that occurs after an `app.get()` will get called after the `app.get()`. Observe the following code:
 ```
 app.use((req, res, next) => {
