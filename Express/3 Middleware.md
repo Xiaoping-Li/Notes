@@ -1,7 +1,11 @@
 # Middleware 
 1. [next()](#next)
 2. [Request And Response Parameters](#Request And Response Parameters)
-3. [Third Example](#third-example)
+3. [Route-Level app.use() - Single Path](#Single Path)
+4. [Control Flow With next()](#Control Flow With next)
+5. [Route-Level app.use() - Multiple Paths](#Multiple Paths)
+6. [Middleware Stacks](#Middleware Stacks)
+7. [Open-Source Middleware](#Open-Source Middleware)
 
 So how do we get code to run every time one of our Express routes is called without repeating ourselves? We write something called _middleware_. **Middleware** is code that executes _between_ a server `receiving a request and sending a response`. It operates on the boundary, so to speak, between those two HTTP actions.
 
@@ -51,10 +55,10 @@ In the above code, the routes are called in the order that they appear in the fi
 
 An **Express middleware** is a function with three parameters: `(req, res, next)`. The sequence is expressed by a set of callback functions invoked _progressively_ after each middleware performs its purpose. The third argument to a middleware function, `next`, should get _explicitly_ called as the last part of the middleware’s body. This will hand off the processing of the request and the construction of the response to the next middleware in the stack.
 
-## Request And Response Parameters
+## Request And Response Parameters <a name="Request And Response Parameters"></a>
 Recall the function signature of an Express middleware, i.e., `(req, res, next)`. You might recognize this signature as being the very same that we’ve used for Express routes in the past. Well there’s a perfectly good reason for that: _Express routes are middleware_. Every route created in Express is also a middleware function handling the request and response objects at that part of the stack. Express routes also have the option of sending a response body and status code and closing the connection. These two features are a byproduct of Express routes being middleware, because all Express middleware functions have access to the request, the response, and the next middleware in the stack.
 
-## Route-Level app.use() - Single Path
+## Route-Level app.use() - Single Path <a name="Single Path"></a>
 Let’s see what the Express documentation for `app.use()` function signature: `app.use([path,] callback [, callback...])`.
  
 In documentation for many programming languages, optional arguments for functions are placed in square brackets (`[]`). This means that `app.use()` takes an optional path parameter as its first argument. We can now write middleware that will run for every request at a specific path.
@@ -82,12 +86,12 @@ app.use('/beans/:beanName', (req, res, next) => {
 });
 ```
 
-## Control Flow With next()
+## Control Flow With next() <a name="Control Flow With next"></a>
 We’ve experienced writing middleware that performs its function and hands off the request and response objects to the next function in the stack, but why exactly do we have to write `next()` at the end of every middleware? If it always needs to be at the end of every function we write, it seems like an unnecessary piece of boilerplate. You might be surprised to learn that we aren’t going to introduce a way to automatically hand off the request and response objects without having to repeatedly write `next()`. Rather, we’re going to explore why it is useful to have `next()` as a separate function call. _The biggest reason being we don’t always want to pass control to the next middleware in the stack_.
 
 For example, when designing a system with confidential information, we want to be able to selectively show that information to authorized users. In order to do that, we would create middleware that tests a user’s permissions. If the user has the permission necessary, we would continue through the middleware stack by calling `next()`. If it fails, we would want to let the user know that they’re not allowed to see the information they’re trying to access.
 
-## Route-Level app.use() - Multiple Paths
+## Route-Level app.use() - Multiple Paths <a name="Multiple Paths"></a>
 We learned that `app.use()` takes a **path** parameter, but we never fully investigated what that path parameter could be. Let’s take another look at the Express documentation for `app.use()`:
 ```
 “argument: path
@@ -101,7 +105,7 @@ An array of combinations of any of the above. “
 ```
 So `app.use()` can take an array of paths! That seems like a handy way to rewrite the code from our last exercise so that we don’t have to put the same code in two different routes with different paths.
 
-## Middleware Stacks
+## Middleware Stacks <a name="Middleware Stacks"></a>
 Recall that middleware is just a function with a specific signature, namely `(req, res, next)`. We have, for the most part, been using anonymous function definitions for this because our middleware has only been relevant to the route invoking it. There is nothing stopping us from defining functions and using them as middleware though. It is also modifiable so that you can remove the `app.use()` line and replace it with a specific route method, or sprinkle it throughout the application without it being universal.
 
 Up until this point we’ve only been giving each middleware-accepting method a single callback. With modular pieces like this, it is useful to know that methods such as `app.use()`, `app.get()`, `app.post()`, and so on all can take multiple callbacks as additional parameters. This results in code that looks like the following:
@@ -136,7 +140,7 @@ app.put('/spells/:id', authenticate, validateData, updateSpell);
 ```
 In the above code sample, we created reusable middleware for authentication and data validation. We use the `authenticate()` middleware to verify a user is logged in before proceeding with the request and we use the `validateData()` middleware before performing the appropriate _create_ or _update_ function. Additional middleware can be placed at any point in this chain.
 
-## Open-Source Middleware
+## Open-Source Middleware <a name="Open-Source Middleware"></a>
 ### Logging
 We will replace the logging code in the workspace with **morgan**, an open-source library for _logging information about the HTTP request-response cycle in a server application_. `morgan()` is a function that will return a middleware function, to reiterate: the return value of `morgan()` will be a function, that function will have the function signature `(req, res, next)` that can be inserted into an `app.use()`, and that function will be called before all following middleware functions. **Morgan** takes an argument to describe the formatting of the logging output. For example, `morgan('tiny')` will return a middleware function that does a “tiny” amount of logging. With morgan in place, we’ll be able to remove the existing logging code. Once we see how fast it is to add logging with morgan, we won’t have to spend time in the future trying to figure out how to replicate that functionality.
 ```
