@@ -1,6 +1,6 @@
 # Middleware 
-1. next()(#next())
-2. Request And Response Parameters(#Request And Response Parameters)
+1. [next()](#next())
+2. [Request And Response Parameters](#Request And Response Parameters)
 3. [Third Example](#third-example)
 
 So how do we get code to run every time one of our Express routes is called without repeating ourselves? We write something called _middleware_. **Middleware** is code that executes _between_ a server `receiving a request and sending a response`. It operates on the boundary, so to speak, between those two HTTP actions.
