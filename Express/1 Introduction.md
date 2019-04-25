@@ -8,9 +8,9 @@
 6. [Setting Status Codes](#Setting)
 7. [Matching Longer Paths](#MatchingLonger)
 8. [Other HTTP Methods](#OtherMethods)
-  1. [Using Queries](#UsingQueries)
-  2. [Creating An Expression](#CreatingExpression)
-  3. [Deleting Old Expressions](#Deleting)
+    1. [Using Queries](#UsingQueries)
+    2. [Creating An Expression](#CreatingExpression)
+    3. [Deleting Old Expressions](#Deleting)
 
 A huge portion of the Internet’s data travels over _HTTP/HTTPS_ through `request-response` cycles between _clients and servers_. Every time that you use a website, your browser sends requests to one or many servers requesting resources.
 
