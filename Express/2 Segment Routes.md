@@ -1,13 +1,4 @@
 # Routers
-
-1. [next()](#next)
-2. [Request And Response Parameters](#Request)
-3. [Route-Level app.use() - Single Path](#Single)
-4. [Control Flow With next()](#Control)
-5. [Route-Level app.use() - Multiple Paths](#Multiple)
-6. [Middleware Stacks](#Middleware)
-7. [Open-Source Middleware](#Open-Source)
-
 The Expressions/Animals routes are all working well, and our machine is fully functional! Our **app.js** file, however, is getting quite long and hard to read. It’s easy to imagine that as we add functionality to an application, this file would get long and cumbersome.
 
 Luckily, Express provides functionality to alleviate this problem: **Routers**. **Routers** are mini versions of Express applications — they provide functionality for handling route matching, requests, and sending responses, but they _do not_ start a separate server or listen on their own ports. Routers use all the `.get()`, `.put()`, `.post()`, and `.delete()` routes that you know and love.
