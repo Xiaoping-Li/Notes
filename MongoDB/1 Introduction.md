@@ -4,4 +4,4 @@
 * Document vs. Row
 * Field vs. Column
 
-`[API] <> [mongoose] <translate between JS objectc and BSON> [MongoDB Server] <> (Database)`
+`[API] <> [mongoose (ORM)] <translate between JS objectc and BSON> [MongoDB Server] <> (Database)`
