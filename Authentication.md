@@ -25,6 +25,7 @@ bcrypt.compare(somepassword, hash, (err, isValid) => {
 
 4. Express sessions
 * Session is basically it contains clients specific data that's going to persist across requests. Think about the word `session`, let's say you have a session on a website, what that means that you are visiting this website you're performing different actions on this website and for the duration of that session the duration of the time you are on that website, you're doing things there is some state associated with your set of requests. 
+* https://stormpath.com/blog/everything-you-ever-wanted-to-know-about-node-dot-js-sessions
 
 
 
