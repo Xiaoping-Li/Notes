@@ -10,4 +10,17 @@ A component `mounts` when it renders for the _first time_. This is when `mountin
 
 When a component mounts, it automatically calls these three methods, in order.
 
+## _Updating_ Lifecycle Methods
+The first time that a component instance renders, it does not update. A component updates every time that it renders, _starting with the second render_.
+
+There are five updating lifecycle methods:
+
+* componentWillReceiveProps
+* shouldComponentUpdate
+* componentWillUpdate
+* render: belongs to two categories: _mounting lifecycle methods_, and _updating lifecycle methods_.
+* componentDidUpdate
+
+Whenever a component instance updates, it automatically calls all five of these methods, in order.
+
 
