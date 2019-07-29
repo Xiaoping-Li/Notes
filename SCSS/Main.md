@@ -150,7 +150,33 @@ When we include our mixin, we can then pass in these arguments in a map with the
  }
  ```
  
- * **String Interpolation**
+* **String Interpolation**: In Sass, `string interpolation` is the process of placing a variable string in the middle of two other strings.
+
+In a _mixin_ context, `interpolation` is handy when you want to make use of variables in selectors or file names. The notation is as follows:
+```
+@mixin photo-content($file) {
+  content: url(#{$file}.jpg); //string interpolation
+  object-fit: cover;
+}
+
+//....
+
+.photo { 
+  @include photo-content('titanosaur');
+  width: 60%;
+  margin: 0px auto; 
+}
+```
+`String interpolation` would enable the following CSS:
+```
+.photo { 
+  content: url(titanosaur.jpg);
+  width: 60%;
+  margin: 0px auto; 
+}
+```
+
+
 
 
 
