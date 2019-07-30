@@ -365,22 +365,107 @@ _Partials_ in Sass are the files you split up to organize specific functionality
 * They use a `_` prefix notation in the file name that tells Sass to hold off on compiling the file individually and instead import it. `_filename.scss`
 * To import this partial into the main file - or the file that encapsulates the important rules and the bulk of the project styles - omit the underscore. For example, to import a file named `_variables.scss`, add the following line of code: `@import "variables";`.
 
+### @Extend
+Many times, when styling elements, we want the styles of one class to be applied to another in addition to its own individual styles, so the traditional approach is to give the element both classes.
+```
+<span class="lemonade"></span>
 
+<span class="lemonade strawberry"></span>
+```
+This is a potential bug in maintainability because then both classes always have to be included in the HTML in order for the styles to be applied.
 
+Enter Sass’s **@extend**. All we have to do is make our `strawberry` class _extend_ `.lemonade` and we will no longer have this dilemma.
+```
+.lemonade {
+  border: 1px yellow;
+  background-color: #fdd;
+}
+.strawberry {
+  @extend .lemonade;
+  border-color: pink;
+}
+```
+This makes it easy to maintain HTML code by removing the need to have multiple classes on an element.
 
+### `%` Placeholders
+Sometimes, you may create classes solely for the purpose of extending them and never actually use them inside your HTML.
 
+Sass anticipated this and allows for a special type of selector called a `placeholder`, which behaves just like a _class_ or _id_ selector, but use the `%` notation instead of `#` or `.`.
 
+**Placeholders** prevent rules from being rendered to CSS on their own and only become active once they are extended anywhere an _id_ or _class_ could be extended.
+```
+// helper/_placeholders.scss:
 
+%absolute{
+   position: absolute;
+}
 
+// main.scss:
+.slogan {
+    @extend %absolute;
+    background-color: $translucent-white;
+    border: 4px solid black;
+    top: 200px;
+}
+```
+Placeholders are a nice way to consolidate rules that never actually get used on their own in the HTML.
 
+### @Extend vs @Mixin
+Recall that _mixins_, unlike extended selectors, insert the code inside the selector’s rules wherever they are included, only including “original” code if they are assigning a new value to the rule’s properties via an argument.
 
+Let’s look at the `@mixin` and `@extend` constructs closely and compare output:
+```
+@mixin no-variable {
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+}
 
+%placeholder {
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+}
 
+span {
+  @extend %placeholder;
+}
 
+div {
+  @extend %placeholder;
+}
 
+p {
+  @include no-variable;
+}
 
+h1 {
+  @include no-variable;
+}```
 
+would compile to:
 
+```scss
+span, div{
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+}
 
+p {
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+  //rules specific to ps
+}
 
-
+h1 {
+  font-size: 12px;
+  color: #FFF;
+  opacity: .9;
+  //rules specific to ps
+}
+```
+As a general rule of thumb, you should:
+* Try to only create _mixins_ that take in an `argument`, otherwise you should _extend_.
+* Always look at your CSS output to make sure your extend is behaving as you intended.
