@@ -345,6 +345,28 @@ For cases with more than two outcomes, the `@if`, `@else-if`, and `@else` direct
 }
 ```
 
+## SUSTAINABLE SCSS
+In addition to having a solid file structure, a big part of staying organized is `splitting up the logic into smaller manageable components`.
+
+Sass extends the existing CSS `@import` rule to allow including other SCSS and Sass files.
+* Typically, all imported SCSS files are imported into a main SCSS file which is then combined to make a single CSS output file.
+* The `main/global` SCSS file has access to any variables or mixins defined in its imported files. The `@import` command takes a filename to import.
+
+By default, `@import` looks for a Sass file in the same or otherwise specified directory but there are a few circumstances where it will behave just like a CSS `@import` rule:
+* If the file’s extension is `.css`.
+* If the filename begins with `http://`.
+* If the filename is a `url()`.
+* If the `@import` has any media queries.
+
+In addition to keeping code organized, importing files can also save you from repeating code. For example, if multiple SCSS files reference the same variables, importing a file with variables partial would save the trouble of redefining them each time.
+
+### Organize with Partials
+_Partials_ in Sass are the files you split up to organize specific functionality in the codebase.
+* They use a `_` prefix notation in the file name that tells Sass to hold off on compiling the file individually and instead import it. `_filename.scss`
+* To import this partial into the main file - or the file that encapsulates the important rules and the bulk of the project styles - omit the underscore. For example, to import a file named `_variables.scss`, add the following line of code: `@import "variables";`.
+
+
+
 
 
 
