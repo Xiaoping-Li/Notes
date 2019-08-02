@@ -88,5 +88,22 @@ It’s worth memorizing the entire example above. It represents a very `common d
 
 **Note:** The example above scales the width of an image (or video) to the width of a container. If the image is larger than the container, the vertical portion of the image will overflow and will not display. To swap this behavior, you can set max-height to 100% and width to auto (essentially swapping the values). This will scale the height of the image with the height of the container instead. If the image is larger than the container, the horizontal portion of the image will overflow and not display.
 
+## Scaling Background Images
+Background images of HTML elements can also be scaled responsively using CSS properties.
+```
+body {
+  background-image: url('#');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+```
+* In the example above, the first CSS declaration sets the background image (# is a placeholder for an image URL in this example). 
+* The second declaration instructs the CSS compiler to not repeat the image (by default, images will repeat). 
+* The third declaration centers the image within the element.
+* The final declaration, however, is the focus of the example above. It’s what scales the background image. The image will cover the entire background of the element, all while keeping the image in proportion. If the dimensions of the image exceed the dimensions of the container then only a portion of the image will display.
+
+
+
 
 
