@@ -156,9 +156,8 @@ In the example above, we used a `comma (,)` to separate multiple rules. The exam
 
 Note that the second media feature is `orientation`. The `orientatio`n media feature detects if the page has more width than height. If a page is wider, it’s considered `landscape`, and if a page is taller, it’s considered `portrait`.
 
+## Breakpoints
+`Breakpoints` are the screen sizes at which your web page does not appear properly. However, setting breakpoints for every device imaginable would be incredibly difficult because there are many devices of differing shapes and sizes. 
 
-
-
-
-
-
+Rather than set breakpoints based on specific devices, the best practice is to resize your browser to view where the website naturally breaks based on its content. The dimensions at which the layout breaks or looks odd become your media query breakpoints. Within those breakpoints, we can adjust the CSS to make the page resize and reorganize.
+https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/screen-sizes.png
