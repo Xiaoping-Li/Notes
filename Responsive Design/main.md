@@ -54,4 +54,18 @@ When a browser window is narrowed or widened, text can become either very compre
 **Note:** The unit of pixels is used to ensure hard limits on the dimensions of the element(s).
 
 ## Height: Minimum & Maximum
+You can also limit the minimum and maximum _height_ of an element.
+* min-height — ensures a minimum height for an element’s box.
+* max-height — ensures a maximum height for an element’s box.
+```
+p {
+  min-height: 150px;
+  max-height: 300px;
+}
+```
+What will happen to the contents of an element if the `max-height` property is set too low for that element? It’s possible that content will **overflow** outside of the element, resulting in content that is not legible.
+
+
+
+
 
