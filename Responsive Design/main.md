@@ -33,7 +33,7 @@ When `percentages` are used, elements are sized relative to the dimensions of th
 ## Percentages: Padding & Margin
 When height and width are set using percentages, you learned that the dimensions of child elements are calculated based on the dimensions of the parent element.
 
-When percentages are used to set padding and margin, however, they are calculated based only on the _width_ of the parent element.
+When percentages are used to set padding and margin, however, they are calculated based only on the _width_ of the parent element. Vertical padding and margin are also calculated based on the width of the parent.
 
 
 
