@@ -30,7 +30,10 @@ When `percentages` are used, elements are sized relative to the dimensions of th
 
 **Note:** Because the box model includes padding, borders, and margins, setting an element’s width to 100% may cause content to _overflow_ its parent container. While tempting, 100% should only be used when content will not have padding, border, or margin.
 
+## Percentages: Padding & Margin
+When height and width are set using percentages, you learned that the dimensions of child elements are calculated based on the dimensions of the parent element.
 
+When percentages are used to set padding and margin, however, they are calculated based only on the _width_ of the parent element.
 
 
 
