@@ -1,1 +1,22 @@
 # Responsive Design
+`Responsive design` refers to the ability of a website to resize and reorganize its content based on:
+* The size of other content on the website.
+* The size of the screen the website is being viewed on.
+
+## Em
+One unit of measurement you can use in CSS to create _relatively-sized_ content is the em, written as `em` in CSS.
+
+## Rem
+**Rem** stands for _root em_. It acts similar to _em_, but instead of checking `parent elements` to size font, it checks the `root element`. The root element is the `<html> tag`.
+
+Most browsers set the font size of `<html>` to _16 pixels_, so by default `rem` measurements will be compared to that value. To set a different font size for the root element, you can add a CSS rule.
+```
+html {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+```
+
