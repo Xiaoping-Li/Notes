@@ -33,7 +33,9 @@ When `percentages` are used, elements are sized relative to the dimensions of th
 ## Percentages: Padding & Margin
 When height and width are set using percentages, you learned that the dimensions of child elements are calculated based on the dimensions of the parent element.
 
-When percentages are used to set padding and margin, however, they are calculated based only on the _width_ of the parent element. Vertical padding and margin are also calculated based on the width of the parent.
+When percentages are used to set padding and margin, however, they are calculated based only on the _width_ of the parent element. An unset height (the parent’s) results in a constantly changing height due to changes to the child element. This is why vertical padding and margin are based on the width of the parent, and not the height.
+
+**Note:** When using relative sizing, `ems` and `rems` should be used to size _text_ and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, `percentages` should be used.
 
 
 
