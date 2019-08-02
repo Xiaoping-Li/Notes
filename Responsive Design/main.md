@@ -21,3 +21,7 @@ h1 {
 ```
 **Note:** One advantage of using `rems` is that all elements are compared to the same font size value, making it easy to predict how large or small font will appear. If you are interested in sizing elements consistently across an entire website, the `rem` measurement is the best unit for the job. If you’re interested in sizing elements in comparison to other elements nearby, then the `em` unit would be better suited for the job.
 
+## Percentages: Height & Width
+To size _non-text_ HTML elements relative to their parent elements on the page you can use `percentages`.
+
+`Percentages` are often used to size `box-model` values, like `width and height, padding, border, and margins`. They can also be used to set positioning properties (top, bottom, left, right).
