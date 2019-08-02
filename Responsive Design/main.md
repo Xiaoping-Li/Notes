@@ -117,5 +117,16 @@ CSS uses `media queries` to adapt a website’s content to different screen size
 3. `and (max-width : 480px)` — This part of the rule is called a _media feature_, and instructs the CSS compiler to apply the CSS styles to devices with a width of 480 pixels or smaller. Media features are the conditions that **must** be met in order to render the CSS within a media query.
 4. CSS rules are nested inside of the media query’s curly braces. The rules will be applied when the media query is met. In the example above, the text in the body element is set to a font-size of 12px when the user’s screen is less than 480px.
 
+## Range
+Specific screen sizes can be targeted by setting multiple width and height media features. `min-width` and `min-height` are used to set the minimum width and minimum height, respectively. Conversely, `max-width` and `max-height` set the maximum width and maximum height, respectively.
+
+By using multiple widths and heights, a **range** can be set for a media query.
+```
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    /* ruleset for 320px - 480px */
+}
+```
+
+
 
 
