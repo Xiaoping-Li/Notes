@@ -37,9 +37,21 @@ When percentages are used to set padding and margin, however, they are calculate
 
 **Note:** When using relative sizing, `ems` and `rems` should be used to size _text_ and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, `percentages` should be used.
 
+## Width: Minimum & Maximum
+Although relative measurements provide consistent layouts across devices of different screen sizes, elements on a website can lose their integrity when they become too small or large. You can limit how wide an element becomes with the following properties:
+* min-width — ensures a minimum width for an element.
+* max-width — ensures a maximum width for an element.
+```
+p {
+  min-width: 300px;
+  max-width: 600px;
+}
+```
+In the example above, when the browser is resized, the width of paragraph elements will not fall below 300 pixels, nor will their width exceed 600 pixels.
 
+When a browser window is narrowed or widened, text can become either very compressed or very spread out, making it difficult to read. These two properties ensure that content is legible by limiting the minimum and maximum widths.
 
+**Note:** The unit of pixels is used to ensure hard limits on the dimensions of the element(s).
 
-
-
+## Height: Minimum & Maximum
 
