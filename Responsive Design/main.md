@@ -25,3 +25,16 @@ h1 {
 To size _non-text_ HTML elements relative to their parent elements on the page you can use `percentages`.
 
 `Percentages` are often used to size `box-model` values, like `width and height, padding, border, and margins`. They can also be used to set positioning properties (top, bottom, left, right).
+
+When `percentages` are used, elements are sized relative to the dimensions of their parent element (also known as a container). Be careful, a child element’s dimensions may be set _erroneously_ if the dimensions of its parent element aren’t set first.
+
+**Note:** Because the box model includes padding, borders, and margins, setting an element’s width to 100% may cause content to _overflow_ its parent container. While tempting, 100% should only be used when content will not have padding, border, or margin.
+
+
+
+
+
+
+
+
+
