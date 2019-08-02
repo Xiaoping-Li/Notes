@@ -126,7 +126,14 @@ By using multiple widths and heights, a **range** can be set for a media query.
     /* ruleset for 320px - 480px */
 }
 ```
+## Dots Per Inch (DPI)
+Another media feature we can target is screen resolution. Many times we will want to supply higher quality media (images, video, etc.) only to users with screens that can support high resolution media. Targeting screen resolution also helps users avoid downloading high resolution (large file size) images that their screen may not be able to properly display.
 
-
+To target by resolution, we can use the `min-resolution` and `max-resolution` media features. These media features accept a resolution value in either `dots per inch (dpi)` or `dots per centimeter (dpc)`. Learn more about resolution measurements here.
+```
+@media only screen and (min-resolution: 300dpi) {
+    /* CSS for high resolution screens */
+}
+```
 
 
