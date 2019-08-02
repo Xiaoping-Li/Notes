@@ -136,4 +136,11 @@ To target by resolution, we can use the `min-resolution` and `max-resolution` me
 }
 ```
 
-
+## And Operator
+The `and` operator can be used to require multiple media features. Therefore, we can use the and operator to require both a max-width of 480px and to have a min-resolution of 300dpi.
+```
+@media only screen and (max-width: 480px) and (min-resolution: 300dpi) {
+    /* CSS ruleset */
+}
+```
+By placing the `and` operator between the two media features, the browser will require both media features to be true before it renders the CSS within the media query. The and operator can be used to chain as many media features as necessary.
