@@ -144,3 +144,21 @@ The `and` operator can be used to require multiple media features. Therefore, we
 }
 ```
 By placing the `and` operator between the two media features, the browser will require both media features to be true before it renders the CSS within the media query. The and operator can be used to chain as many media features as necessary.
+
+## Comma Separated List
+If only one of multiple media features in a media query must be met, media features can be separated in a `comma separated` list.
+```
+@media only screen and (min-width: 480px), (orientation: landscape) {
+    /* CSS ruleset */
+}
+```
+In the example above, we used a `comma (,)` to separate multiple rules. The example above requires only one of the media features to be true for its CSS to apply.
+
+Note that the second media feature is `orientation`. The `orientatio`n media feature detects if the page has more width than height. If a page is wider, it’s considered `landscape`, and if a page is taller, it’s considered `portrait`.
+
+
+
+
+
+
+
