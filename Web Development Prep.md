@@ -8,6 +8,8 @@ A promise is an object which can be returned synchronously from an asynchronous 
 * **Rejected**: onRejected() will be called (e.g., reject() was called)
 * **Pending**: not yet fulfilled or rejected
 
+A promise is **settled** if it’s not pending (it has been resolved or rejected). Once settled, a promise can not be resettled. Calling `resolve()` or `reject()` again will have no effect. The immutability of a settled promise is an important feature.
+
 
 
 ### How do you write your own promise?
