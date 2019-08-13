@@ -113,8 +113,10 @@ myFunc();
 ## Closures
 Another topic commonly discussed in interviews, and is a bit more advanced, are closures. You will want to review:
 
-* What is a closure?
-● A ​common example question​ using a closure
+### What is a closure?
+
+
+### A common example question using a closure
 
 
 
