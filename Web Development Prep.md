@@ -110,6 +110,12 @@ myFunc();
 * When `.catch()` is used with a long promise chain, there is no indication of where in the chain the error was thrown. This can make debugging challenging. With `async...await`, we use `try...catch` statements for error handling. 
 
 
+## Closures
+Another topic commonly discussed in interviews, and is a bit more advanced, are closures. You will want to review:
+
+* What is a closure?
+● A ​common example question​ using a closure
+
 
 
 
