@@ -1,7 +1,7 @@
 ## Javascript Promises
 One of the most commonly asked questions around Javascript is about Promises. Be prepared to write some code around promises in an interview. It’s also a good skill to have! You probably want to review the following subjects:
 
-### What is a promise?
+### What is a promise (ES6)?
 An _asynchronous operation_ is one that allows the computer to “move on” to other tasks while waiting for the asynchronous operation to complete.
 
 Web development makes use of _asynchronous operations_. Operations like making a network request or querying a database can be time-consuming, but JavaScript allows us to execute other tasks while awaiting their completion. Modern JavaScript handles asynchronicity using the `Promise` object, introduced with _ES6_. 
@@ -76,6 +76,40 @@ orderSunglassesPromise
   ```
  **Note**: If the promise rejects, `.then()` will return a promise with the same rejection reason as the original promise and `.catch()`‘s failure handler will be invoked with that rejection reason.
 
-
 ### How do you get the result from multiple promises in order (using Promise.all, etc.)?
+`Promise.all()` accepts an array of promises as its argument and returns a single promise. That single promise will settle in one of two ways:
+* If _every_ promise in the argument array resolves, the single promise returned from `Promise.all()` will resolve with an array containing the resolve value from each promise in the argument array.
+* If _any_ promise from the argument array rejects, the single promise returned from `Promise.all()` will immediately reject with the reason that promise rejected. This behavior is sometimes referred to as _failing fast_.
+
+### async...await syntax (ES8)
+Often in web development, we need to handle asynchronous actions— actions we can wait on while moving on to other tasks. We make requests to networks, databases, or any number of similar operations. JavaScript is non-blocking: instead of stopping the execution of code while it waits, JavaScript uses an `event-loop` which allows it to efficiently execute other tasks while it awaits the completion of these asynchronous actions.
+* The `async` keyword is used to write functions that handle asynchronous actions. We wrap our asynchronous logic inside a function prepended with the `async keyword`. Then, we invoke that function.
+```
+async function myFunc() {};
+---------------------------
+const myFunc = async () => {};
+
+myFunc();
+```
+ * `async` functions always return a promise. This means we can use traditional promise syntax, like `.then()` and `.catch` with our async functions.
+ * An async function will return in one of three ways:
+  * If there’s nothing returned from the function, it will return a promise with a resolved value of undefined.
+  * If there’s a non-promise value returned from the function, it will return a promise resolved to that value.
+  * If a promise is returned from the function, it will simply return that promise
+ ```
+ async function fivePromise() { 
+   return 5;
+ }
+
+ fivePromise()
+ .then(resolvedValue => {
+     console.log(resolvedValue);
+   })  // Prints 5
+  ```
+* The `await` keyword can only be used inside an `async` function. `await` is an operator: it returns the resolved value of a promise. Since promises resolve in an _indeterminate_ amount of time, `await` halts, or pauses, the execution of our `async` function until a given promise is resolved.
+* When `.catch()` is used with a long promise chain, there is no indication of where in the chain the error was thrown. This can make debugging challenging. With `async...await`, we use `try...catch` statements for error handling. 
+
+
+
+
 
