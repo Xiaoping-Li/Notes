@@ -49,14 +49,33 @@ const myExecutor = (resolve, reject) => {
 };
 
 const orderSunglassesPromise = new Promise(myExecutor);
-
-orderSunglassesPromise
-  .then(result => console.log(result))
-  .catch(err => console.log(err);
-
 ```
 In our example, `myFirstPromise` resolves or rejects based on a simple condition, but, in practice, promises settle based on the results of asynchronous operations. For example, a database request may fulfill with the data from a query or reject with an error thrown. 
 
 ### How do you get the result of a promise (ex. from an API call)?
+```
+orderSunglassesPromise
+  .then(result => console.log(result))
+  .catch(err => console.log(err);
+```
+* `.then()` is a higher-order function — it takes two callback functions as arguments. We refer to these callbacks as _handlers_. When the promise settles, the appropriate _handler_ will be invoked with that settled value. 
+ * The first handler, `onFulfilled`, is a _success handler_, and it should contain the logic for the promise resolving.
+ * The second handler, `onRejected`, is a _failure handler_, and it should contain the logic for the promise rejecting.
+ 
+ **Note**: We can invoke `.then()` with one, both, or neither handler! This allows for flexibility, but it can also make for tricky debugging. One important feature of `.then()` is that it always returns a promise. `.then()` will return a promise with the same settled value as the promise it was called on if no appropriate handler was provided. This implementation allows us to separate our _resolved logic_ from our _rejected logic_.
+
+* The `.catch()` function takes only one argument, `onRejected`. In the case of a rejected promise, this failure handler will be invoked with the reason for rejection. 
+ ```
+ prom
+  .then((resolvedValue) => {
+    console.log(resolvedValue);
+  })
+  .catch((rejectionReason) => {
+    console.log(rejectionReason);
+  });
+  ```
+ **Note**: If the promise rejects, `.then()` will return a promise with the same rejection reason as the original promise and `.catch()`‘s failure handler will be invoked with that rejection reason.
+
+
 ### How do you get the result from multiple promises in order (using Promise.all, etc.)?
 
