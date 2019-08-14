@@ -112,6 +112,9 @@ myFunc();
 
 ## Closures
 Another topic commonly discussed in interviews, and is a bit more advanced, are closures. You will want to review:
+http://javascriptissexy.com/understand-javascript-closures-with-ease/
+
+Closures are used extensively in Node.js; they are workhorses in Node.js’ asynchronous, non-blocking architecture.
 
 ### What is a closure?
 * **Closures** are inner functions inside of an outer function. They have their own local scope and has access to outer function's scope, parameters (but NOT arguments object), and they also have access to global variables. Closures is a neat way to deal with `scope` issues.
@@ -119,11 +122,44 @@ Another topic commonly discussed in interviews, and is a bit more advanced, are 
  * it has access to its own scope (variables defined between its curly brackets), 
  * it has access to the outer function's variables,
  * it has access to the global variables.
+* The inner function has access not only to the outer function’s variables, but also to the outer function’s _parameters_. Note that the inner function **cannot** call the outer function’s arguments object, however, even though it can call the outer function’s parameters directly.
+* You create a closure by adding a function inside another function.
 * In JavaScript, closures are created every time a function is created, at function creation time.
 * To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function.
 
 ### A common example question using a closure
+```
+// this inner function has access to the outer function's variables, including the parameter
+function fullName (firstName, lastName) {
+ const preIntro = "My name is: ";
+ const combineIntro = () => preIntro + firstName + ' ' + lastName;
+ return combineIntro();
+}
 
+fullName("leela", "Dee");
+```
 
+### Closures’ Rules and Side Effects
+* Closures have access to the outer function’s variable even after the outer function returns:
+ ```
+ function scaleTenTwice(first) {
+  const x = 10;
+  
+  // this inner function has access to the outer function's variables, including the parameter
+  const secondScale = (second) => {
+   return x * first * second;
+  }
+  return secondScale;
+ }
+ 
+ const nextScale = scaleTenTwice(2); // At this juncture, the scaleTenTwice outer function has returned.
+ 
+ // The closure is called here after the outer function has returned above
+ // Yet, the closure still has access to the outer function's variables and parameter
+ nextScale(5);
+ ```
 
+* Closures store references to the outer function’s variables
+
+* Closures Gone Awry. Because closures have access to the updated values of the outer function’s variables, they can also lead to bugs when the outer function’s variable changes with a for loop.
 
