@@ -114,7 +114,13 @@ myFunc();
 Another topic commonly discussed in interviews, and is a bit more advanced, are closures. You will want to review:
 
 ### What is a closure?
-
+* **Closures** are inner functions inside of an outer function. They have their own local scope and has access to outer function's scope, parameters (but NOT arguments object), and they also have access to global variables. Closures is a neat way to deal with `scope` issues.
+* A **closure** is an inner function that has access to the outer (enclosing) function's variables — _scope chain_. The `closure` has three _scope chains_: 
+ * it has access to its own scope (variables defined between its curly brackets), 
+ * it has access to the outer function's variables,
+ * it has access to the global variables.
+* In JavaScript, closures are created every time a function is created, at function creation time.
+* To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function.
 
 ### A common example question using a closure
 
