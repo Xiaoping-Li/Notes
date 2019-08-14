@@ -14,8 +14,6 @@ Closures are used extensively in Node.js; they are workhorses in Node.js’ asyn
 * You create a closure by adding a function inside another function. In JavaScript, closures are created every time a function is created, at function creation time.
 * To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function.
 * In JavaScript, closures are the primary mechanism used to enable _data privacy_. When you use closures for data privacy, the enclosed variables are only in scope within the containing (outer) function. You can’t get at the data from an outside scope except through the object’s privileged methods. 
-
-## A common example question using a closure
 ```
 // this inner function has access to the outer function's variables, including the parameter
 function fullName (firstName, lastName) {
@@ -26,6 +24,9 @@ function fullName (firstName, lastName) {
 
 fullName("leela", "Dee");
 ```
+
+## A common example question using a closure
+
 
 ## Closures’ Rules and Side Effects
 * Closures have access to the outer function’s variable even after the outer function returns:
