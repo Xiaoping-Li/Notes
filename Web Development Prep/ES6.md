@@ -10,6 +10,12 @@
 ## ES6
 Some companies want to test your knowledge specifically about modern Javascript. Some example questions are:
 ### What is your favourite feature of ES6?
+#### Promise (See Promises.md)
+#### Arrow Function
+* Arrow syntax automatically binds `this` to the surrounding code’s context
+* The syntax allows an implicit return when there is no body block, resulting in shorter and simpler code in some cases
+* `=>` is shorter and simpler than `function`
+
 #### `let` and `const`
 (https://codeutopia.net/blog/2015/01/06/es6-what-are-the-benefits-of-the-new-features-in-practice/)
 
@@ -57,15 +63,33 @@ function foo() {
 }
 ```
 
-#### Benefits of `let`
+**Benefits of `let`**
 A major benefit of `let` is it works nicely within for-loops. One of the most common stumbling blocks for JS-beginners is the closure-within-for problem.
 
-#### Benefits of `const`
+**Benefits of `const`**
 * The person reading the code immediately sees the variable should not be changed
 * Changing the value will result in an error
 
-### Default parameters
+#### Destructuring assignment
 
+#### Iterators and Generators
+
+#### Rest and spread parameters
+
+
+#### Template literals
+
+#### Default parameters
+ES6 allows us to define _default values_ for function parameters! One potential gotcha of this syntax is that variables without default parameters still receive `undefined` as their default, rather than throwing an error if not called with enough parameters. 
+```
+function hello(name = 'Anonymous') {
+  console.log('Hi ' + name);
+}
+```
+**Benefits**:
+* Less boilerplate code to handle parameters
+* Anyone reading your code immediately sees which parameters are optional, without having reading the function body (where they might or might not be on top of the function).
+* This can be useful when refactoring, as you can change a function to have default parameters instead of removing a parameter altogether to keep better backwards-compatibility
 
 
 ### What are the benefits of an arrow function?
