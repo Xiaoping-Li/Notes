@@ -26,7 +26,36 @@ fullName("leela", "Dee");
 ```
 
 ## A common example question using a closure
+JavaScript Closures: setTimeout Inside a For Loop (https://wsvincent.com/javascript-closure-settimeout-for-loop/)
 
+It’s a common question asked in interviews since the answer touches upon several core JavaScript concepts: `closures`, `hoisting`, and the `event loop`.
+
+```
+// var defined a function scope variable here
+for (var i = 1; i < 5; i++) {
+  console.log(i);  // 1 2 3 4
+}
+
+// for loop will be executed first, closure functions will be waiting in the callback queue, and will be invoked after i incremented to 5
+for (var i = 1; i < 5; i++) {
+    setTimeout(() => console.log(i), 1000)  // 5 5 5 5
+}
+
+//Solution 1: let defines a enclosing block scope variable, which binds with fresh value
+for (let i = 1; i < 5; i++) {
+    setTimeout(() => console.log(i), 1000)  // 1 2 3 4
+}
+
+// Solution 2: Immediately Invoked Function Expression (IIFE)
+for (var i = 0; i < 5; i++) {
+  (function (idx) {
+    setTimeout(
+    () => console.log(idx), 
+    1000
+  );
+  })(i); 
+}
+```
 
 ## Closures’ Rules and Side Effects
 * Closures have access to the outer function’s variable even after the outer function returns:
