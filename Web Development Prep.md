@@ -123,9 +123,9 @@ Closures are used extensively in Node.js; they are workhorses in Node.js’ asyn
  * it has access to the outer function's variables,
  * it has access to the global variables.
 * The inner function has access not only to the outer function’s variables, but also to the outer function’s _parameters_. Note that the inner function **cannot** call the outer function’s arguments object, however, even though it can call the outer function’s parameters directly.
-* You create a closure by adding a function inside another function.
-* In JavaScript, closures are created every time a function is created, at function creation time.
+* You create a closure by adding a function inside another function. In JavaScript, closures are created every time a function is created, at function creation time.
 * To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function.
+* In JavaScript, closures are the primary mechanism used to enable _data privacy_. When you use closures for data privacy, the enclosed variables are only in scope within the containing (outer) function. You can’t get at the data from an outside scope except through the object’s privileged methods. 
 
 ### A common example question using a closure
 ```
