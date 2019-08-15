@@ -151,10 +151,91 @@ console.log(nameB);   // "Flexo"
     ```
     
 #### 6. Three dots (...): Rest parameter Or Spread operators
-Javascript's ECMA6 came out with some cool new features; `...` one of these new Javascript functionalities. It can be used in two different ways; as a spread operator OR as a rest parameter.
+Javascript's ECMA6 came out with some cool new features; `...` is one of these new Javascript functionalities. It can be used in two different ways, as a `spread operator` OR as a `rest parameter`.
+* `Rest parameter`: **collects** all _remaining_ elements into an _array_.
+* `Spread operator`: allows _iterables_( arrays / objects / strings ) to be **expanded** into single arguments/elements.
 
+* 1. **Rest parameter**
+```
+function add(x, y) {
+  return x + y;
+}
 
+add(1, 2, 3, 4, 5) // returns 3
+```
+The above function call returns _3_, this is because in Javascript it is possible to call a function with any number of arguments. However, only the fist two arguments will be counted.
 
+With `rest parameters` we can gather any number of arguments into an array and do what we want with them. So we can re-write the add function like this:
+```
+function add(...args) {
+  let result = 0;
+
+  for (let arg of args) result += arg;
+
+  return result
+}
+
+add(1) // returns 1
+add(1,2) // returns 3
+add(1, 2, 3, 4, 5) // returns 15
+```
+**Note**: `Rest parameters` have to be at the **last argument**. This is because it collects all `remaining/ excess` arguments into an array. So having a function definition like this does not make sense and it errors out. :
+```
+function abc(a, ...b, c) {
+  ...
+  return;
+}
+```
+We can separately define the _first arguments_, and the _rest of the arguments_ in the function call (no matter how many they are) will be collected into an array by the `rest parameter`.
+```
+function xyz(x, y, ...z) {
+  console.log(x, ' ', y); // hey hello
+
+  console.log(z); // ["wassup", "goodmorning", "hi", "howdy"]
+  console.log(z[0]); // wassup
+  console.log(z.length); // 4
+}
+
+xyz("hey", "hello", "wassup", "goodmorning", "hi", "howdy")
+```
+Since the `rest parameter` gives us an **array**, we can use array methods like `Array.find` e.t.c. Before `rest parameters` existed, to get all the arguments in a function we used `arguments` which is an _array-like object_.
+```
+function someFunction() {
+  return arguments;
+}
+
+someFunction("joykare", 100, false);    // [Arguments] { '0': 'joykare', '1': 100, '2': false }
+```
+The downside of using the `arguments` keyword is that,
+* It returns an _array-like_ object; this means you essentially cannot perform any `array-methods` like: `Array.filer`, `Array.map`.
+* Another pitfall, is that we cannot use `arguments` in _arrow functions_. This is because _arrow-functions_ do not have their own `this`, and hence no `arguments` object either.
+
+* 2. **Spread operator**
+The `spread operator` allows us to **expand** elements. With `rest parameters` we were able to get a list of arguments into an array. `spread operators` however, let us **unpack** elements in an array to `single/individual` arguments.
+  * 1. Adding array elements to an existing array
+    ```
+    const arr = ["Joy", "Wangari", "Warugu"];
+    const newArr = ["joykare", ...arr];
+    ```
+    **Note**: Unlike `rest parameters` you can use the `spread operator` as the _first argument_. So if you wanted to add an element as the last element in your array you cna do this:
+    ```
+    const myNames = [...arr, "joykare"];
+    ```  
+  * 2. Copying arrays
+    ```
+    const arr = [1, 2, 3];
+    const arr2 = [...arr];
+    ```
+  * 3. Pass elements of an array to a function as separate arguments
+    ```
+    function add(a, b, c) {
+      return a + b + c ;
+    }
+    const args = [1, 2, 3];
+
+    add(...args);
+    ```
+    **Note**: We have been using _arrays_ to demonstrate the `spread operator`, but any **iterable** also works. So, if we had a string `const str = 'joykare', [...str] translates to [ 'j', 'o', 'y', 'k', 'a', 'r', 'e' ]`.
 
 #### 7. Default parameters
 ES6 allows us to define _default values_ for function parameters! One potential gotcha of this syntax is that variables without default parameters still receive `undefined` as their default, rather than throwing an error if not called with enough parameters. 
