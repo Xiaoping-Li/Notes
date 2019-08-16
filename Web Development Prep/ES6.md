@@ -18,6 +18,7 @@ Some companies want to test your knowledge specifically about modern Javascript.
 * `const` declares a _block-scoped_ constant. A constant is like a variable, except you can’t change its value.
 *  When assigning an object to a `const`, you will still be able to modify its properties!
 * Variables and constants declared with `let` or `const` are not hoisted!
+* Also we can not re-declare the same variable in the same scope.
 
 ```
 function foo() {
@@ -69,6 +70,12 @@ A major benefit of `let` is it works nicely within for-loops. One of the most co
 * Arrow syntax automatically binds `this` to the surrounding code’s context
 * The syntax allows an implicit return when there is no body block, resulting in shorter and simpler code in some cases
 * `=>` is shorter and simpler than `function`
+
+There are four fundamental differences between _arrow functions_ and function functions:
+* They close over `this`, and do not have their own versions.
+* They can have a concise body (without { }) rather than a verbose one (but they can have a verbose body as well).
+* They cannot be used as `constructors`. E.g., you can’t use `new` with an arrow function. Hence arrow functions do not have a `protoype` property on them.
+* There is no `generator syntax` for arrow functions. E.g., there is no arrow equivalent to function *foo() { ... }.
 
 #### 3. Promise (See Promises.md)
 #### 4. Template literals
@@ -492,14 +499,9 @@ class Administrator extends User {
   * 3. Class _method_ and _getter_ syntax is the same as it is for objects except you **can not include commas between methods**. Notice, we also prepended our property names with _underscores_ (_name and _behavior), which indicate these properties should not be accessed directly. 
   * 4. When multiple classes share properties or methods, they become candidates for **inheritance** — a tool developers use to decrease the amount of code they need to write. With inheritance, you can create a _parent_ class (also known as a _superclass_) with properties and methods that multiple _child_ classes (also known as subclasses) share. The child classes inherit the properties and methods from their parent class.
     * The **extends** keyword makes the methods of the _parent_ class available inside the _child_ class.
-    * The **super** keyword calls the constructor of the _parent_ class. Notice, we call **super** on the first line of _child_ `constructor()`, then set the _child_ property on the second line. In a `constructor()`, you must always call the **super** method before you can use the `this` keyword — if you do not, JavaScript will throw a _reference error_. To avoid _reference errors_, it is best practice to call **super** on the first line of subclass constructors.  
+    * The **super** keyword calls the constructor of the _parent_ class. Notice, we call **super** on the first line of _child_ `constructor()`, then set the _child_ property on the second line. In a `constructor()`, you must always call the **super** method before you can use the `this` keyword — if you do not, JavaScript will throw a _reference error_. To avoid _reference errors_, it is best practice to call **super** on the first line of subclass constructors.
   * 5. In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
+  * 6. **Static Methods**: Sometimes you will want a class to have methods that aren’t available in individual instances, but that you can call directly from the class.
   
-  
-  
-  
-  
-  
-
-
 ### Here are a couple over common ES6 questions
+(https://medium.com/@vigowebs/frequently-asked-es6-interview-questions-and-answers-e3fb7f2dba2)
