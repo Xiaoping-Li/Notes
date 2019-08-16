@@ -405,16 +405,16 @@ let sum = (...args) => args.reduce((a, b) => a + b, 0)
 This concise syntax makes arrow functions even better for defining small and easily readable callbacks.
 
 ### Async and Await keywords
+* 1. **Async**
+**Async** functions enable us to write `promise` based code as if it were _synchronous_, but without blocking the execution thread. It operates asynchronously via the _event-loop_. **Async** functions will always return a value. Using `async` simply implies that a _promise will be returned_, and _if a promise is not returned, JavaScript automatically wraps it in a resolved promise with its value_.
 
+* 2. **Await**
+The `await` operator is used to wait for a `Promise`. It can be used inside an _Async block_ **only**. The keyword **Await** makes JavaScript wait until the promise returns a result. It has to be noted that it only makes the async function block wait and not the whole program execution.
 
+* 3. **promise.all()**
+**Async Await** makes execution sequential, this is not a good practice, as large requests can be very time consuming. We have to make the execution parallel.
 
-
-
-
-
-
-
-
+The `Promise.all()` method returns a single `Promise` that resolves when **all** of the promises passed as an iterable have resolved or when the iterable contains no promises. It rejects with the reason of the first promise that rejects.
 
 ### Javascript classes
 ### Here are a couple over common ES6 questions
