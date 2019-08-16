@@ -238,19 +238,67 @@ The `spread operator` allows us to **expand** elements. With `rest parameters` w
     **Note**: We have been using _arrays_ to demonstrate the `spread operator`, but any **iterable** also works. So, if we had a string `const str = 'joykare', [...str] translates to [ 'j', 'o', 'y', 'k', 'a', 'r', 'e' ]`.
 
 #### 7. Default parameters
-ES6 allows us to define _default values_ for function parameters! One potential gotcha of this syntax is that variables without default parameters still receive `undefined` as their default, rather than throwing an error if not called with enough parameters. 
+`Default Parameters` allow you to set default values for any arguments that are _undefined_ when a function is invoked.  One potential gotcha of this syntax is that variables without default parameters still receive `undefined` as their default, rather than throwing an error if not called with enough parameters. 
 ```
 function hello(name = 'Anonymous') {
   console.log('Hi ' + name);
 }
 ```
+With ES5,
+```
+function calculatePayment (price, salesTax, discount) {
+  salesTax = salesTax || 0.047
+  discount = discount || 0
+  ...
+}
+```
+What happens if when we invoke _calculatePayment_ passing in `100, 0, and 0`? So instead of _salesTax_ being `0` as we specified, it’s instead set to our default value of `0.047`. To fix this, we can use the `typeof` operator rather than relying on the `||` operator.
+```
+function calculatePayment (price, salesTax, discount) {
+  salesTax = typeof salesTax === 'undefined' ? 0.047 : salesTax
+  discount = typeof discount === 'undefined' ? 0 : discount
+  ...
+}
+```
+Now, _salesTax_ will be 0 just as we’d expect. ES6’s _Default Paremeters_ solves the same problem. 
+```
+function calculatePayment(price, salesTax = 0.047, discount = 0) {
+  ...
+}
+```
+There’s one more cool|weird|clever aspect of **Default Parameters** that’s worth mentioning. Everything else we could just set a default value for but if `price` wasn’t passed in, the function would break. What if there was a way, using _default parameters_, to have our function `throw an error` if `price` was _undefined_ when the function was invoked?
+```
+function isRequired (name) {
+  throw new Error(name + 'is required')
+}
+
+function calculatePayment(
+  price = isRequired('price'),
+  salesTax = 0.047,
+  discount = 0
+) { ... }
+```
+Now if we invoke _calculatePayment_ and don’t pass in a `price`, we’ll get an _error_.
+
 **Benefits**:
 * Less boilerplate code to handle parameters
 * Anyone reading your code immediately sees which parameters are optional, without having reading the function body (where they might or might not be on top of the function).
 * This can be useful when refactoring, as you can change a function to have default parameters instead of removing a parameter altogether to keep better backwards-compatibility
 
 #### 8. Iterators and Generators
+(https://medium.com/@madasamy/explanation-about-iterators-and-generators-in-javascript-es6-f7e669cbe96e)
 
+ES6 introduces a new mechanism for traversing data: `iteration`. Two concepts are central to iteration:
+* An _iterable_ is a data structure that wants to make its elements accessible to the public. It does so by implementing a method whose key is `Symbol.iterator`. That method is a factory for _iterators_.
+* An _iterator_ is a pointer for traversing the elements of a data structure (think cursors in databases).
+
+Iterable values in Javascript:
+* Arrays
+* Strings
+* Maps
+* Sets
+* DOM data structures (work in progress)
+Plain objects are not iterable.
 
 ### What are the benefits of an arrow function?
 ### Async and Await keywords
