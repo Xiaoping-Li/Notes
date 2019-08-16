@@ -301,6 +301,120 @@ Iterable values in Javascript:
 Plain objects are not iterable.
 
 ### What are the benefits of an arrow function?
+(https://medium.com/tfogo/advantages-and-pitfalls-of-arrow-functions-a16f0835799e)
+
+* 1. **Arrow functions and this**
+In _classic function_ expressions, the `this` keyword is bound to different values based on the **context** in which the function is called. Whereas _arrow functions_ use the value of `this` in their **lexical scope**. 
+
+What’s the difference between _context_ and _scope_? The _context_ is (roughly) the object that **calls** the function. And the _scope_ is all the variables visible to a function **where it is defined**. One cares about how it is called, the other cares about how it is defined.
+
+For an example of _context_, consider an object which has a method defined by a function expression:
+```
+let obj = {
+  myVar: 'foo',
+  
+  myFunc: function() {
+    console.log(this.myVar)
+  }
+}
+obj.myFunc() // foo
+```
+`obj` is the object calling `myFunc`. It’s `myFunc`'s _context_. So the value of `this` in `myFunc` is bound to `obj`. **Context** can be defined in different ways depending on how a function is called. For example when a _constructor_ is called with the `new` keyword, it refers to the the object being created.
+
+So if `this` is bound to the _context_ (i.e. bound to the object that calls a function), it can lead to some very awkward issues with _callbacks_. Let’s add a `setTimeout` to our `obj.myFunc` to simulate a callback:
+```
+let obj = {
+  myVar: 'foo',
+  
+  myFunc: function() { 
+    console.log(this.myVar)   
+ 
+    setTimeout(function() {
+      console.log(this.myVar)
+    }, 1000)
+  }
+}
+obj.myFunc() // foo ... then... undefined
+```
+`myFunc`'s value of `this` refers to `obj`. so logging `myFunc.myVar` from within that function correctly prints `'foo'`. However, the second function is called by `setTimeout` — so its context is different. Its context is actually a `Timeout` object in `Node` or the `window` object in browsers. So although we probably meant for `this` still to refer to `obj`, we’ve lost our reference to it.
+
+One strategy is to assign `this` to a variable which is usually named `self` or `that`. This variable is in the **lexical scope** of the callback function. This means the callback function can access that variable because it was defined in its scope:
+```
+let obj = {
+  myVar: 'foo',
+  
+  myFunc: function() { 
+    let self = this
+    console.log(this.myVar)  
+  
+    setTimeout(function() {
+      console.log(self.myVar)
+    }, 1000)
+  }
+}
+obj.myFunc() // foo ... then... foo
+```
+You can also achieve `this` using methods such as `bind, call, and apply`. These are all different ways of passing in a value to be bound to the `this` keyword of a function.
+
+There’s an even cleaner solution to this problem using _arrow functions_. Recall we said that arrow functions take their value of this from the **lexical scope**. That means it just uses the value of `this` in the surrounding code block. It doesn’t care _what calls it_, it just cares **where it was defined**.
+```
+let obj = {
+  myVar: 'foo',
+  
+  myFunc: function() { 
+    console.log(this.myVar)  
+  
+    setTimeout(() => {
+      console.log(this.myVar)
+    }, 1000)
+  }
+}
+obj.myFunc() // foo ... then... foo
+```
+So immediately we can see that arrow functions are better suited for _callbacks_. But what happens if we try to use an arrow function as an object method?
+```
+let obj = {
+  myVar: 'foo',
+  
+  myFunc: () => { 
+    console.log(this.myVar)  
+  }
+}
+obj.myFunc() // undefined
+```
+You might expect `this` to refer to `obj`. But arrow functions don’t bind `this` to the object that called them. They just use the value of `this` in the scope in which they were defined. In this case, that’s the _global object_. So arrow functions are unusable for object methods!
+
+**The takeaway**: _Function expressions_ are best for object methods. _Arrow functions_ are best for callbacks or methods like map, reduce, or forEach.
+
+On a fundamental level, _arrow functions_ are simply incapable of binding a value of `this` different from the value of `this` in their **scope**. So the methods `bind`, `call`, and `apply` will have _no effect_ on them.
+
+* 2. **Constructors**
+There’s another way arrow functions don’t work well with objects. They can’t be _constructors_. Arrow functions do not have a `prototype` property and they cannot be used with `new`.
+
+* 3. **Binding arguments**
+We’ve seen how arrow functions don’t bind a `this` and they just use the value of `this` in their scope. Arrow functions don’t have an `arguments` object. But the same functionality can be achieved using _rest parameters_:
+```
+let sum4 = (...args) => {
+  return args.reduce((a, b) => a + b, 0)
+}
+```
+* 4. **Implicitly returning values**
+```
+let sum = (...args) => args.reduce((a, b) => a + b, 0)
+```
+This concise syntax makes arrow functions even better for defining small and easily readable callbacks.
+
 ### Async and Await keywords
+
+
+
+
+
+
+
+
+
+
+
 ### Javascript classes
 ### Here are a couple over common ES6 questions
