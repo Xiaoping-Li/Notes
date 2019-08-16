@@ -490,12 +490,9 @@ class Administrator extends User {
   * 1. JavaScript calls the `constructor()` method every time it creates a `new` _instance_ of a class. Inside of the `constructor()` method, we use the `this` keyword. In the context of a class, `this` refers to an _instance_ of that class.
   * 2. An `instance` is an object that contains the _property_ names and _methods_ of a class, but with **unique property values**. We use the `new` keyword to generate a new instance of the class. The `new` keyword calls the `constructor()`, runs the code inside of it, and then returns the _new instance_.
   * 3. Class _method_ and _getter_ syntax is the same as it is for objects except you **can not include commas between methods**. Notice, we also prepended our property names with _underscores_ (_name and _behavior), which indicate these properties should not be accessed directly. 
-  * 4. When multiple classes share properties or methods, they become candidates for **inheritance** — a tool developers use to decrease the amount of code they need to write. 
-
-With inheritance, you can create a _parent_ class (also known as a _superclass_) with properties and methods that multiple _child_ classes (also known as subclasses) share. The child classes inherit the properties and methods from their parent class.
-    * 1. The **extends** keyword makes the methods of the _parent_ class available inside the _child_ class.
-    * 2. The **super** keyword calls the constructor of the _parent_ class. Notice, we call **super** on the first line of _child_ `constructor()`, then set the _child_ property on the second line. In a `constructor()`, you must always call the **super** method before you can use the `this` keyword — if you do not, JavaScript will throw a _reference error_. To avoid _reference errors_, it is best practice to call **super** on the first line of subclass constructors. 
-    
+  * 4. When multiple classes share properties or methods, they become candidates for **inheritance** — a tool developers use to decrease the amount of code they need to write. With inheritance, you can create a _parent_ class (also known as a _superclass_) with properties and methods that multiple _child_ classes (also known as subclasses) share. The child classes inherit the properties and methods from their parent class.
+    * The **extends** keyword makes the methods of the _parent_ class available inside the _child_ class.
+    * The **super** keyword calls the constructor of the _parent_ class. Notice, we call **super** on the first line of _child_ `constructor()`, then set the _child_ property on the second line. In a `constructor()`, you must always call the **super** method before you can use the `this` keyword — if you do not, JavaScript will throw a _reference error_. To avoid _reference errors_, it is best practice to call **super** on the first line of subclass constructors.  
   * 5. In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
   
   
