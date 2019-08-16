@@ -417,4 +417,92 @@ The `await` operator is used to wait for a `Promise`. It can be used inside an _
 The `Promise.all()` method returns a single `Promise` that resolves when **all** of the promises passed as an iterable have resolved or when the iterable contains no promises. It rejects with the reason of the first promise that rejects.
 
 ### Javascript classes
+(https://medium.com/@luke_smaki/javascript-es6-classes-8a34b0a6720a)
+(https://medium.com/@robertgrosse/how-es6-classes-really-work-and-how-to-build-your-own-fd6085eb326a)
+
+* 1. **OOP (Object Oriented Programming) in JavaScript before ES6**
+**OOP** describes a way to write programs. This way focuses on _data_: stored as object `properties`, and _actions_: stored as object `methods`. 
+```
+function User(name, email, age) {
+  this.name = name;
+  this.email = email;
+  this.age = age;
+}
+
+const jeff = new User('Jeff', 'jeff@gmail.com', 18);
+```
+The _User_ function is an example of a **constructor**. A **constructor** is a function that is called each time an object is created (also referred to as instantiated). The _User_ constructor creates the properties of the object (this.name, this.age, this.email) and assigns them the value of the parameters passed to it (name, age, email).
+
+* 2. **OOP in JavaScript with ES6**
+```
+class User {
+  constructor(name, email, age) {
+    this._name = name;
+    this._email = email;
+    this._age = age;
+  }
+  
+  increaseAge() {
+    this._age += 1;
+  }
+  
+  get name() {
+    return this._name;
+  }
+  
+  set name(newName) {
+    this._name = newName;
+  }
+  
+  static staticMethod() {
+    console.log("I am static method");
+  }
+}
+
+const jeff = new User('Jeff', 'jeff@gmail.com', 18);
+
+jeff.staticMethod();   // return TypeError since staticMethod is not a method of jeff
+User.staticMethod();   // outputs: I am static method
+
+class Administrator extends User {
+  constructor(name, email, age, role) {
+    super(name, email, age);
+    this._role = role;
+  }
+  
+  get role() {
+    return this._role;
+  }
+  
+  set role(newRole) {
+    this._role = newRole;
+  }
+}
+```
+  * The `constructor()` method is a special method called when an `instance` of the _User_ class is created.
+  * Classes can also contain **static** methods. A **static** method is a function that is bound to the class, not an object. A **static** method cannot be called from an instance of the class. 
+  * One of the core concepts of **OOP** is **encapsulation**. An important part of **encapsulation** is that data (object properties) should not be directly accessed or modified from outside the object. To access or modify a property we would use a `getter` (access) or a `setter` (modify), which are specific methods we define in our class.
+  * **Inheritance**: Classes can also inherit from other classes. The class being inherited from is called the **parent**, and the class inheriting from the parent is called the **child**.
+    * 1. Firstly, when we create the _child_ class we need to state that it **extends** the _parent_ class. Then we need to pass whatever properties we want to inherit from the parent to the child’s constructor, as well as any new properties that we will define in the child class. 
+    * 2. Next, we call the **super** method. Notice that we pass it the values that we pass the child class when creating the instance object. These values are defined in the parent’s constructor so we need to run it in order for the values to be instantiated. Now we can define our child class’s properties and methods.
+
+* 3. some keys of class
+  * 1. JavaScript calls the `constructor()` method every time it creates a `new` _instance_ of a class. Inside of the `constructor()` method, we use the `this` keyword. In the context of a class, `this` refers to an _instance_ of that class.
+  * 2. An `instance` is an object that contains the _property_ names and _methods_ of a class, but with **unique property values**. We use the `new` keyword to generate a new instance of the class. The `new` keyword calls the `constructor()`, runs the code inside of it, and then returns the _new instance_.
+  * 3. Class _method_ and _getter_ syntax is the same as it is for objects except you **can not include commas between methods**. Notice, we also prepended our property names with _underscores_ (_name and _behavior), which indicate these properties should not be accessed directly. 
+  * 4. When multiple classes share properties or methods, they become candidates for **inheritance** — a tool developers use to decrease the amount of code they need to write. 
+
+With inheritance, you can create a _parent_ class (also known as a _superclass_) with properties and methods that multiple _child_ classes (also known as subclasses) share. The child classes inherit the properties and methods from their parent class.
+    * 1. The **extends** keyword makes the methods of the _parent_ class available inside the _child_ class.
+    * 2. The **super** keyword calls the constructor of the _parent_ class. Notice, we call **super** on the first line of _child_ `constructor()`, then set the _child_ property on the second line. In a `constructor()`, you must always call the **super** method before you can use the `this` keyword — if you do not, JavaScript will throw a _reference error_. To avoid _reference errors_, it is best practice to call **super** on the first line of subclass constructors. 
+    
+  * 5. In addition to the inherited features, child classes can contain their own properties, getters, setters, and methods.
+  
+  
+  
+  
+  
+  
+
+
 ### Here are a couple over common ES6 questions
