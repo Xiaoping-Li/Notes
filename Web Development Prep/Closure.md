@@ -7,9 +7,9 @@ Closures are used extensively in Node.js; they are workhorses in Node.js’ asyn
 ## What is a closure?
 * **Closures** are inner functions inside of an outer function. They have their own local scope and has access to outer function's scope, parameters (but NOT arguments object), and they also have access to global variables. Closures is a neat way to deal with `scope` issues.
 * A **closure** is an inner function that has access to the outer (enclosing) function's variables — _scope chain_. The `closure` has three _scope chains_: 
- * it has access to its own scope (variables defined between its curly brackets), 
- * it has access to the outer function's variables,
- * it has access to the global variables.
+  * it has access to its own scope (variables defined between its curly brackets), 
+  * it has access to the outer function's variables,
+  * it has access to the global variables.
 * The inner function has access not only to the outer function’s variables, but also to the outer function’s _parameters_. Note that the inner function **cannot** call the outer function’s arguments object, however, even though it can call the outer function’s parameters directly.
 * You create a closure by adding a function inside another function. In JavaScript, closures are created every time a function is created, at function creation time.
 * To use a closure, define a function inside another function and expose it. To expose a function, return it or pass it to another function.
