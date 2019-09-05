@@ -19,7 +19,7 @@ It is important to distinguish that _variables_ are not _values_; they contain v
 * Constant variables must be assigned a value when _declared_. If you try to declare a `const` variable without a value, you’ll get a `SyntaxError`.
 * A `const` variable cannot be _reassigned_ because it is **constant**. If you try to reassign a `const` variable, you’ll get a `TypeError`.
 
-## _falsy_ values
+## Truthy and Falsy Assignment
 The list of `falsy values` includes:
 * 0
 * Empty strings like "" or ''
