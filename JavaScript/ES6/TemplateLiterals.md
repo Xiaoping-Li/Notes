@@ -9,6 +9,11 @@ Any time we see an expression preceding a template literal, we call the expressi
 1. Template literals是一个ES2015特性，它使用反引号包含一个字符串字面量，并且支持嵌入表达式和换行。
 2. Tagged template literals: Template lieterals支持Tag。我们可以在Template lieterals前放置一个函数名，用来**控制它如何被转换成字符串**。
 
+**Notes:**
+* Enhance readability
+* Separate line layout
+* Don't have to worry about escaping double quotes or single quotes
+
 ## Tagged Template Literals
 Tagged template literals allow us to use a function to modify the output of a template literal. In this construct:
 
