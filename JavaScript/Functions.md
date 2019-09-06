@@ -12,7 +12,7 @@ const square = function(x) {
 ```
 * Named Function Expression: The code below demonstrates a _named_ function expression.
 ```
-var fib = function fibonacci(n){
+const fib = function fibonacci(n){
     if (n > 2) {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
@@ -23,6 +23,22 @@ var fib = function fibonacci(n){
     return 1;
 }
 ```
+
+## Function Expression vs. Function Declaration
+**Function Declaration**
+```
+function sayHi() {
+  console.log('hello there!');
+}
+```
+
+**Function Expression**
+```
+const sayHi = function(){
+  console.log('hello there!');
+}
+```
+Unlike `function declarations`, `function expression`s are not **hoisted** so they cannot be called before they are defined.
 
 # Recursion
 This is an extremely important algorithmic concept that involves splitting a problem into two parts: a _base case_ and a _recursive case_. The problem is divided into smaller subproblems which are then solved recursively until such time as they are small enough and meet some base case; once the base case is met, the solutions for each subproblem are combined and their result is the answer to the entire problem. 
