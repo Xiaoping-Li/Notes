@@ -45,6 +45,9 @@ JavaScript also provides several ways to refactor _arrow function_ syntax. The m
 * Functions that take only a **single** parameter do not need that parameter to be enclosed in parentheses. However, if a function takes **zero or multiple** parameters, parentheses are `required`.
 * A function body composed of a _single-line_ block does not need curly braces. Without the curly braces, whatever that line evaluates will be automatically _returned_. The contents of the block should immediately follow the arrow `=>` and the `return` keyword can be removed. This is referred to as _implicit return_.
 
+## Higher-order Function
+_Higher-order functions_ are functions that accept other functions as `arguments` and/or `return` functions as output. 
+
 # Recursion
 This is an extremely important algorithmic concept that involves splitting a problem into two parts: a _base case_ and a _recursive case_. The problem is divided into smaller subproblems which are then solved recursively until such time as they are small enough and meet some base case; once the base case is met, the solutions for each subproblem are combined and their result is the answer to the entire problem. 
 
