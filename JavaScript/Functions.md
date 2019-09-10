@@ -48,6 +48,11 @@ JavaScript also provides several ways to refactor _arrow function_ syntax. The m
 ## Higher-order Function
 _Higher-order functions_ are functions that accept other functions as `arguments` and/or `return` functions as output. 
 
+### Functions as Parameters
+A _higher-order function_ is a function that either `accepts` functions as parameters, `returns` a function, or both! We call the functions that get passed in as parameters and invoked _callback functions_ because they get called during the execution of the _higher-order function_.
+
+When we pass a function in as an argument to another function, we don’t _invoke_ it. Invoking the function would evaluate to the return value of that function call. 
+
 # Recursion
 This is an extremely important algorithmic concept that involves splitting a problem into two parts: a _base case_ and a _recursive case_. The problem is divided into smaller subproblems which are then solved recursively until such time as they are small enough and meet some base case; once the base case is met, the solutions for each subproblem are combined and their result is the answer to the entire problem. 
 
