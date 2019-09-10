@@ -1,4 +1,9 @@
 # Promise
+这里强调几点:
+* 不要剥夺函数 return 的能力，很多人写 Promise，照样有大量嵌套，掉进 Promise 地狱，要记得及时 return，避免嵌套
+* 当需要多个请求全部结束时，才更新数据，可以用 Promise.all(fetch1,fetch2)
+* 当需要从多个请求中，接受最先返回数据的那个请求，可以用 Promise.race(fetch1,fetch2)
+
 **Promises** are objects that represent the eventual outcome of an asynchronous operation. A `Promise` object can be in one of three states:
 
 * **Pending**: The initial state— the operation has not completed yet.
