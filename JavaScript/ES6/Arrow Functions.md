@@ -43,4 +43,19 @@ JS 中 this 的指向问题一直都是面试高频考点，总结起来就是�
 
 现在你应该明白为何 React 中的函数写法都为箭头函数，就是为了绑定 this
 
+```
+const goat = {
+  dietType: 'herbivore',
+  makeSound() {
+    console.log('baaa');
+  },
+  diet: () => {
+    console.log(this.dietType);
+  }
+};
+
+goat.diet(); // Prints undefined
+```
+The key takeaway from the example above is to _**avoid**_ using arrow functions when using `this` in a method!
+
 
