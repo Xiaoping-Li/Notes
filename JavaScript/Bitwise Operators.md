@@ -142,6 +142,16 @@ a | ~a
 
 For example, ~101 = 010.
 
+The bitwise NOT operator (~) just flips all of the bits in a single number. What this actually means to the computer is actually very complicated, so we’re not going to get into it. Just know that mathematically, this is equivalent to adding one to the number and then making it negative.
+
+```
+console.log(~1)   // -2
+console.log(~2)   // -3
+console.log(~3)   // -4
+console.log(~42)   // -43
+console.log(~123)   // -124
+```
+
 ### Example
 ```
 // Bitwise AND
@@ -167,6 +177,6 @@ For example, ~101 = 010.
                --------------------------------
 ~9 (base 10) = 11111111111111111111111111110110 (base 2) = -10 (base 10)
 ```
-The bitwise NOT operator (~) just flips all of the bits in a single number. What this actually means to the computer is actually very complicated, so we’re not going to get into it. Just know that mathematically, this is equivalent to adding one to the number and then making it negative.
+
 
 
