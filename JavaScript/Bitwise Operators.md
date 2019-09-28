@@ -41,6 +41,20 @@ Conceptually, the bitwise logical operators work as follows:
 * Each bit in the first operand is paired with the corresponding bit in the second operand from least to most significant. In other words, the first LSB matches the first LSB, the second LSB matches the second LSB, and so on.
 * The operator is applied to each pair of bits so that the resulting number is constructed bitwise (i.e., bit-by-bit).
 
+### Shift Right (>>) and Shift Left(<<)
+```
+# Left Bit Shift (<<)  
+0b000001 << 2 == 0b000100 (1 << 2 = 4)
+0b000101 << 3 == 0b101000 (5 << 3 = 40)       
+
+# Right Bit Shift (>>)
+0b0010100 >> 3 == 0b000010 (20 >> 3 = 2)
+0b0000010 >> 2 == 0b000000 (2 >> 2 = 0) 
+```
+Shift operations are similar to _rounding down after **dividing and multiplying by 2** (respectively) for **every** time you shift_, but it’s often easier just to think of it as shifting all the 1s and 0s left or right by the specified number of slots.
+
+Note that you can only do bitwise operations on an integer. Trying to do them on strings or floats will result in nonsensical output!
+
 ### Bitwise AND (`&`)
 This operator performs the _AND_ operation on each pair of bits. Given two binary numbers, a and b, the result of an **AND** operation on the corresponding bits at each position i (i.e., ai & bi) is 1 if and only if both ai and bi are 1. The truth table for the bitwise **AND** operation is:
 
@@ -52,6 +66,8 @@ ai | bi | ai & bi
 1 | 1 | 1
 
 For example, 101 & 110 = 100.
+
+**Note** that using the `&` operator can only result in a number that is **less than or equal to the smaller** of the two values.
 
 ### Bitwise OR (`|`)
 This operator performs the _OR_ operation on each pair of bits. Given two binary numbers, a and b, the result of an **OR** operation on the corresponding bits at each position i (i.e., ai | bi) is 1 if ai and/or bi are 1. The truth table for the bitwise **OR** operation is:
@@ -65,6 +81,8 @@ ai | bi | ai \| bi
 
 For example, 0101 | 0110 = 0111.
 
+**Note** that the bitwise `|` operator can only create results that are **greater than or equal to the larger** of the two integer inputs.
+
 ### Bitwise XOR (`^`)
 This operator performs the _XOR_ operation on each pair of bits. Given two binary numbers, a and b, the result of an **XOR** operation on the corresponding bits at each position i (i.e., ai ^ bi) is 1 if either ai or bi is 1 (i.e., the values of the two operands are different). The truth table for the bitwise **XOR** operation is:
 
@@ -76,6 +94,8 @@ ai | bi | ai ^ bi
 1 | 1 | 0
 
 For example, 0101 ^ 0110 = 0011.
+
+Keep in mind that if a bit is off in both numbers, it stays off in the result. Note that XOR-ing a number with itself will always result in 0.
 
 **Example: (From Leetcode)**
 
@@ -147,6 +167,6 @@ For example, ~101 = 010.
                --------------------------------
 ~9 (base 10) = 11111111111111111111111111110110 (base 2) = -10 (base 10)
 ```
-
+The bitwise NOT operator (~) just flips all of the bits in a single number. What this actually means to the computer is actually very complicated, so we’re not going to get into it. Just know that mathematically, this is equivalent to adding one to the number and then making it negative.
 
 
