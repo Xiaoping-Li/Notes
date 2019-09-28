@@ -178,5 +178,47 @@ console.log(~123)   // -124
 ~9 (base 10) = 11111111111111111111111111110110 (base 2) = -10 (base 10)
 ```
 
+### Bit Mask
+A _bit mask_ is just a variable that aids you with bitwise operations. A bit mask can help you turn specific bits on, turn others off, or just collect data from an integer about which bits are on or off.
 
+#### Check if ON
+```
+num  = 0b1100
+mask = 0b0100
+desired = num & mask
+if desired > 0:
+  print "Bit was on"
+```
+In the example above, we want to see if the third bit from the right is on.
 
+#### Turn It On
+```
+a = 0b110 # 6
+mask = 0b1 # 1
+desired =  a | mask # 0b111, or 7
+```
+Using the bitwise `|` operator will turn a corresponding bit on if it is off and leave it on if it is already on.
+
+#### Just Flip Out
+Using the `XOR (^)` operator is very useful for flipping bits. Using `^` on a bit with the `number one` will return a result where that bit is flipped.
+
+For example, let’s say I want to flip all of the bits in a. I might do this:
+```
+a = 0b110 # 6
+mask = 0b111 # 7
+desired =  a ^ mask # 0b1
+```
+
+#### Slip and Slide
+Finally, you can also use the `left shift (<<)` and `right shift (>>)` operators to slide masks into place.
+```
+a = 0b101 
+# Tenth bit mask
+mask = (0b1 << 9)  # One less than ten 
+desired = a ^ mask
+```
+Let’s say that I want to turn on the 10th bit from the right of the integer a.
+
+Instead of writing out the entire number, we slide a bit over using the << operator.
+
+We use 9 because we only need to slide the mask nine places over from the first bit to reach the tenth bit.
