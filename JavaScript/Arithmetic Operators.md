@@ -39,3 +39,6 @@ An _arithmetic operator_ takes numeric values (either literals or variables) as 
 * _prefix_ form update state now.
 * _postfix_ form update in the second sequence not now.
 
+### Modulo: %
+The modulo operator is useful in programming when we want to perform an action every nth-time the code is run. Can the result of a modulo operation be larger than the divisor? Why or why not?
+
