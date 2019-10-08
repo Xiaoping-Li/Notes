@@ -14,9 +14,9 @@ As programmers, we often find ourselves asking the sam two questions over and ov
 (n -The size of the input)   
 (Complexities ordered from smallest to largest)  
 
-| Field|  Type   |  Description       |  Default   |   Example   |
-|------|:-------:|:-------------------|:-------------:|:-------:|
-| tags |  String | A comma separated list of tags | NA |tech, health| 
+| Field|  Type   |  
+|------|:-------:|
+| tags |  String | 
 
 
 
