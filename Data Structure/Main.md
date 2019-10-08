@@ -15,7 +15,7 @@ As programmers, we often find ourselves asking the sam two questions over and ov
 (Complexities ordered from smallest to largest)  
 
 |Type  |         | Example |  
-|------:|:-------:|:-----:|
+|------:|:-------:|:-----|
 | Constant Time: |  O(1) |  |
 | Logarithmic Time: |  O(log(n)) |  |
 | Linear Time: |  O(n) |  |
