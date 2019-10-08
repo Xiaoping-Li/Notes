@@ -10,9 +10,11 @@ As programmers, we often find ourselves asking the sam two questions over and ov
 ### Big-O Notation
 `Big-O Notation` gives an _upper bound_ of the complexity in the **worst** case, helping to quantify performance as the input size becomes **arbitrarily large**.
 
-| ---- | ----- |
-----------------
-| ------|-------|
+| Big-O Notation   |
+| n -The size of the input   |
+| Complexities ordered from smallest to largest   |
+|------|:-------:|:-------------------|:-------------:|:-------:|
+| tags |  String | A comma separated list of tags | NA |tech, health|
 
 
 
