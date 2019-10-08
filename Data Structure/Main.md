@@ -14,16 +14,16 @@ As programmers, we often find ourselves asking the sam two questions over and ov
 (n -The size of the input)   
 (Complexities ordered from smallest to largest)  
 
-|Type  |         |  
-|------:|:-------:|
-| Constant Time: |  O(1) |
-| Logarithmic Time: |  O(log(n)) |
-| Linear Time: |  O(n) |
-| Linearithmic Time: |  O(nlog(n)) |
-| Quadric Time: |  O(n^2) |
-| Cubic Time: |  O(n^3) |
-| Exponential Time: |  O(b^n), b > 1 |
-| Factorial Time: |  O(n!) |
+|Type  |         | Example |  
+|------:|:-------:|:-----:|
+| Constant Time: |  O(1) |  |
+| Logarithmic Time: |  O(log(n)) |  |
+| Linear Time: |  O(n) |  |
+| Linearithmic Time: |  O(nlog(n)) | merge sort  |
+| Quadric Time: |  O(n^2) |   |
+| Cubic Time: |  O(n^3) |   |
+| Exponential Time: |  O(b^n), b > 1 | Finding all subsets of a set - O(2^n)|
+| Factorial Time: |  O(n!) | Finding all permutations of a string|
 
 
 
