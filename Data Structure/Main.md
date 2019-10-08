@@ -17,13 +17,13 @@ As programmers, we often find ourselves asking the sam two questions over and ov
 |Type  |         |  
 |------:|:-------:|
 | Constant Time: |  O(1) |
-| Logarithmic Time: |  O(1) |
-| Linear Time: |  O(1) |
-| Linearithmic Time: |  O(1) |
-| Quadric Time: |  O(1) |
-| Cubic Time: |  O(1) |
-| Exponential Time: |  O(1) |
-| Factorial Time: |  O(1) |
+| Logarithmic Time: |  O(log(n)) |
+| Linear Time: |  O(n) |
+| Linearithmic Time: |  O(nlog(n)) |
+| Quadric Time: |  O(n^2) |
+| Cubic Time: |  O(n^3) |
+| Exponential Time: |  O(b^n), b > 1 |
+| Factorial Time: |  O(n!) |
 
 
 
