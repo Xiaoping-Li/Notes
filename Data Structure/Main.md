@@ -13,6 +13,7 @@ As programmers, we often find ourselves asking the sam two questions over and ov
 **Big-O Notation**  
 (n -The size of the input)   
 (Complexities ordered from smallest to largest)  
+|      |         |
 |------|:-------:|
 | tags |  String | 
 
