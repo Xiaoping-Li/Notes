@@ -14,9 +14,16 @@ As programmers, we often find ourselves asking the sam two questions over and ov
 (n -The size of the input)   
 (Complexities ordered from smallest to largest)  
 
-| Field|  Type   |  
-|------|:-------:|
-| tags |  String | 
+|Type  |         |  
+|------:|:-------:|
+| Constant Time: |  O(1) |
+| Logarithmic Time: |  O(1) |
+| Linear Time: |  O(1) |
+| Linearithmic Time: |  O(1) |
+| Quadric Time: |  O(1) |
+| Cubic Time: |  O(1) |
+| Exponential Time: |  O(1) |
+| Factorial Time: |  O(1) |
 
 
 
