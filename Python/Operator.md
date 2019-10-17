@@ -13,3 +13,10 @@
 **in**: evaluates if object on left side is _included in_ object on right side
 
 **not in**: evaluates if object on left side is _not included in_ object on right side
+```
+name = ['me', 'you', 'she', 'he']
+print('her' in name)
+
+output: False
+```
+
