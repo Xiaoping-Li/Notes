@@ -24,3 +24,17 @@ output: False
 **is**: evaluates if both sides have the same identity
 
 **is not**: evaluates if both sides have different identities
+
+### Checking for Equality vs. Identity: == vs. is
+```
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+
+print(a == b)   --->>> True
+print(a is b)   --->>> True
+print(a == c)   --->>> True
+print(a is c)   --->>> Fasle
+```
+List **a** and list **b** are _equal_ and _identical_. List **c** is _equal_ to **a** (and **b** for that matter) since they have the same contents. But **a** and **c** (and **b** for that matter, again) point to two different objects, i.e., they aren't _identical_ objects. That is the difference between checking for _equality vs. identity_.
+
