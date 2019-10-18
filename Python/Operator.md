@@ -20,3 +20,7 @@ print('her' in name)
 output: False
 ```
 
+## Identity Operators
+**is**: evaluates if both sides have the same identity
+
+**is not**: evaluates if both sides have different identities
