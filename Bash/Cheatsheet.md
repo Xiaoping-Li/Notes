@@ -22,6 +22,18 @@ With the Shell, you can use commands to organize your files into directories, mo
 ## Downloading (curl)
 `curl` is used in command lines or scripts to transfer data.
 
+## Viewing files
+* `cat`: view file content.
+* `less`: View file content screen by screen.
+
+## Removing files or directories(rm, rmdir)
+* `rm`: Delete files
+* `redir`: Delete directories
+
+## Searching and pipes(grep, wc)
+* `grep`: "global regular expression print", processes text line by line and prints any lines which match a special pattern
+* `wc`: "short for _word count_" reads either standard input or a list of files and generates one or more of the following statistics: newline count, word count, and byte count.
+
 
 
 
