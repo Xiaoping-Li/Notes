@@ -28,6 +28,10 @@ There are two different ways to display code:
       import requests
       response = requests.get('https://www.udacity.com')
 
-
+## Math expressions
+You can create math expressions in Markdown cells using LaTeX symbols. Notebooks use MathJax to render the LaTeX symbols as math symbols. To start math mode, wrap the LaTeX in dollar signs `$y = mx + b$` for inline math. For a math block, use double dollar signs,
+$$
+y = \frac{a}{b+c}
+$$
 
 
