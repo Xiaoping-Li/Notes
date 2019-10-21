@@ -36,3 +36,4 @@ You can create math expressions in Markdown cells using LaTeX symbols. Notebooks
     $$
 
 
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
