@@ -24,6 +24,7 @@ There are two different ways to display code:
   response = requests.get('https://www.udacity.com')
   ```
   or indent each line of the code block with four spaces.
+      
     import requests
     response = requests.get('https://www.udacity.com')
 
