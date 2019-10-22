@@ -20,5 +20,10 @@ f.close()
 2. Use the write method to add text to the file.
 3. Close the file when finished.
 
-
-
+## With
+Python provides a special syntax that auto-closes a file for you once you're finished using it.
+```
+with open('my_path/my_file.txt', 'r') as f:
+    file_data = f.read()
+```
+This `with` keyword allows you to open a file, do operations on it, and automatically close it after the indented code is executed, in this case, reading from the file. Now, we don’t have to call `f.close()`! You can only access the file object, `f`, within this indented block.
