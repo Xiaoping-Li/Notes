@@ -7,6 +7,13 @@ There are two kinds of errors in Python:
   * **IndexError**: A sequence subscript is out of range.
   * **KeyError**: A key can't be found in a dictionary.
   * **TypeError**: An object of an unsupported type is passed as input to an operation or function.
+  
+|EXAMPLE EXCEPTION|HOW WOULD YOU TRY TO HANDLE THE EXCEPTION?|
+|:---|:---|
+|NameError: name 'abc_dict' is not defined|Identifier is not found in the local or global namespace. Make sure the reference to the identifier is correctory added to the code.|
+|UnboundLocalError|You are trying to access a local variable before it is defined. Make sure local scope of variable in function is defined or value assigned to it.|
+|ValueError: too many values to unpack (expected 2)|Assignation error. Inconsistency in how many values being unpacked and how many variables the values should be assigned to.|
+|TypeError: unsupported operand type(s) for +: 'int' and 'str'|An operation or function is applied to an object of inappropriate type - e.g., trying to concatenate a string and integer. Change the datatype for one of the values (e.g chang int to str)|
 
 ## Handling Errors
 ### Try Statement
