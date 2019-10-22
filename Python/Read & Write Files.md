@@ -9,6 +9,29 @@ f.close()
 3. Use the `read` method to access the contents from the file object. This `read` method takes the text contained in a file and puts it into a string. Here, we assign the string returned from this method into the variable `file_data`.
 4. When finished with the file, use the `close` method to free up any system resources taken up by the file.
 
+### Calling the read Method with an Integer
+In the code you saw earlier, the call to `f.read()` had no arguments passed to it. This defaults to reading all the remainder of the file from its current position - the whole file. If you pass the `read` method an integer argument, it will read up to that number of characters, output all of them, and keep the _'window'_ at that position ready to read on.
+
+Let's see this in an example that uses the following file, `camelot.txt`:
+```
+We're the knights of the round table
+We dance whenever we're able
+```
+Here's a script that reads in the file a little at a time by passing an integer argument to `.read()`.
+```
+with open("camelot.txt") as song:
+    print(song.read(2))
+    print(song.read(8))
+    print(song.read())
+```
+Outputs:
+```
+We
+'re the 
+knights of the round table
+We dance whenever we're able
+```
+Each time we called `read` on the file with an integer argument, it read up to that number of characters, outputted them, and kept the 'window' at that position for the next call to `read`. This makes moving around in the open file a little tricky, as there aren't many landmarks to navigate by.
 
 ## Writing to a File
 ```
