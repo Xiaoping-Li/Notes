@@ -8,7 +8,7 @@ There are two kinds of errors in Python:
   * **KeyError**: A key can't be found in a dictionary.
   * **TypeError**: An object of an unsupported type is passed as input to an operation or function.
 
-## Handling Erros
+## Handling Errors
 ### Try Statement
 We can use `try` statements to handle _exceptions_. There are four clauses you can use:
 
@@ -42,4 +42,4 @@ except KeyboardInterrupt:
     # some code
 ```
 
-
+## Handling Input Errors
