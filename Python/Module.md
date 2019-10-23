@@ -20,6 +20,29 @@ To avoid running executable statements in a script when it's imported as a modul
 Whenever we run a script like this, Python actually sets a special built-in variable called `__name__` for any module. When we run a script, Python recognizes this module as the main program, and sets the `__name__` variable for this module to the string `"__main__"`. For any modules that are imported in this script, this built-in `__name__` variable is just set to the name of that module. Therefore, the condition `if __name__ == "__main__"`is just checking whether this module is the main program.
 
 
-
-
+## Techniques for Importing Modules
+1. To import an individual function or class from a module:
+```
+from module_name import object_name
+```
+2. To import multiple individual objects from a module:
+```
+from module_name import first_object, second_object
+```
+3. To rename a module:
+```
+import module_name as new_name
+```
+4. To import an object from a module and rename it:
+```
+from module_name import object_name as new_name
+```
+5. To import every object individually from a module (DO NOT DO THIS):
+```
+from module_name import *
+```
+6. If you really want to use all of the objects from a module, use the standard import module_name statement instead and access each of the objects with the dot notation.
+```
+import module_name
+```
 
