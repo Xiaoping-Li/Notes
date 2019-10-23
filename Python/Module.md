@@ -53,3 +53,13 @@ Modules that are submodules are specified by the package name and then the submo
 ```
 import package_name.submodule_name
 ```
+
+## Third-Party Libraries
+There are tens of thousands of third-party libraries written by independent developers! You can install them using `pip`, a package manager that is included with Python 3. pip is the standard package manager for Python, but it isn't the only one. One popular alternative is `Anaconda` which is designed specifically for data science.
+
+To install a package using pip, just enter "pip install" followed by the name of the package in your command line like this: `pip install package_name`. This downloads and installs the package so that it's available to import in your programs. 
+* Once installed, you can import third-party packages using the same syntax used to import from the standard library.
+* It's standard practice to put the import statements for third-party libraries after imports from the standard library.
+
+
+
