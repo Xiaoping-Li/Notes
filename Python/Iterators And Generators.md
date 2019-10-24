@@ -30,7 +30,7 @@ outputs:
 ```
 
 ## Why Generators?
-You may be wondering why we'd use generators over lists. Here’s an excerpt from a stack overflow page that addresses this:
+You may be wondering why we'd use generators over lists. Here’s an excerpt from a [stack overflow](https://softwareengineering.stackexchange.com/questions/290231/when-should-i-use-a-generator-and-when-a-list-in-python/290235) page that addresses this:
 >Generators are a lazy way to build iterables. They are useful when the fully realized list would not fit in 
 >memory, or when the cost to calculate each list element is high and you want to do it as late as possible. 
 >But they can only be iterated over once.
