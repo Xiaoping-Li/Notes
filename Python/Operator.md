@@ -1,5 +1,15 @@
 ## Arithmatic Operator
 ## Comparison Operator
+## Assignment Operator
+* **=**
+* **+=**
+* **-=**
+* ***=**
+* **/=**
+* **%=**
+* ****=**
+* **//=**
+
 ## Logical Operator
 **and**: Returns the first false value; if not found returns last.
 
